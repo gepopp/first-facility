@@ -8,9 +8,9 @@
                     <div class="relative flex justify-center items-center aspect-[2/3] md:aspect-video overflow-hidden w-full bg-gray-50 clip-slide-vertical -mt-1">
                         <img src="{{ $slide->getFirstMediaUrl() }}" class="min-h-full w-full object-cover brightness-75" alt="{{ $slide->title }}"/>
                         <div class="absolute inset-0 flex items-center pl-12 sm:pl-24">
-                            <div class="max-w-64 z-50">
-                                <h2 class="text-xl md:text-2xl lg:text-3xl xl:text-7xl font-bold text-white uppercase drop-shadow-logo">{{ $slide->title }}</h2>
-                                <p class="text-white text-xs sm:text-base line-clamp-6">{{ $slide->description }}</p>
+                            <div class="max-w-64 sm:max-w-xs md:max-w-md z-50">
+                                <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-white uppercase drop-shadow-logo">{{ $slide->title }}</h2>
+                                <p class="sm:leading-none text-white text-xs sm:text-base line-clamp-6 lg:line-clamp-[8]">{{ $slide->description }}</p>
 
                                 <div class="mt-10">
                                     <a href="{{ $slide->link }}" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
@@ -28,7 +28,7 @@
         <div class="absolute right-0 mr-4 sm:mr-10 top-1/2 -translate-y-1/2 z-10">
             <div class="relative z-50">
                 <template x-for="(slide, index ) in slides" :key="slide.id">
-                    <div class="py-4 border-r-4 my-2 z-50 cursor-pointer"
+                    <div class="py-2 border-r-4 my-2 z-50 cursor-pointer"
                          x-on:click="gotoSlide(index)"
                          :class="index == currentSlide ? 'border-logo-dark-blue': 'border-white'">
                         <p class="mr-4 uppercase hidden sm:block"
@@ -38,12 +38,19 @@
                 </template>
             </div>
         </div>
+
+
+
         <div class="absolute top-0 left-0 w-full z-10 pt-5">
             <x-menubar/>
         </div>
-        <div class="absolute bottom-0 right-0 inline-flex items-center justify-center overflow-hidden rounded-full p-2 sm:p-5">
+
+
+
+
+        <div class="absolute bottom-0 right-0 inline-flex items-center justify-center overflow-hidden rounded-full p-2 lg:p-5">
             <div class="relative flex flex-col items-center z-50">
-                <div x-on:click="next" class="w-8 h-8 rounded-full bg-white text-logo-dark-blue flex justify-center items-center transition-all duration-300 hover:border border-white hover:bg-transparent hover:text-white">
+                <div x-on:click="next" class="md:hidden lg:flex w-8 h-8 rounded-full bg-white text-logo-dark-blue flex justify-center items-center transition-all duration-300 hover:border border-white hover:bg-transparent hover:text-white">
                     <svg class="w-6 h-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18"></path>
                     </svg>
@@ -91,7 +98,7 @@
                         </svg>
                     </div>
                 </div>
-                <div x-on:click="prev" class="w-8 h-8 rounded-full text-white hover:text-logo-dark-blue hover:bg-white transition-all duration-300 border border-white flex justify-center items-center cursor-pointer">
+                <div x-on:click="prev" class="md:hidden lg:flex w-8 h-8 rounded-full text-white hover:text-logo-dark-blue hover:bg-white transition-all duration-300 border border-white flex justify-center items-center cursor-pointer">
                     <svg class="w-6 h-6" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"></path>
                     </svg>
@@ -162,6 +169,7 @@
                         }
                     },
                     rewind: true,
+                    spaceBetween: 30,
                     ...settings.{{ $effect }}
                 });
             },

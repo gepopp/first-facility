@@ -11,14 +11,10 @@
     @livewireStyles
 </head>
 <body class="antialiased">
-<div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-    <div class="min-h-screen w-full bg-logo-dark-blue">
-        <div class="container pt-0 py-3 relative" x-data="{ show: false, showMenu: false }">
-            <livewire:frontpage.hero-slide/>
-        </div>
-    </div>
-
+<div class="min-h-screen w-full bg-logo-dark-blue">
+        <livewire:frontpage.hero-slide/>
 </div>
+
 
 @if( config('app.debug') )
     <div class="fixed bottom-0 right-0 bg-white/50">
