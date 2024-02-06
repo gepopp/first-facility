@@ -31,12 +31,12 @@ class HeroSlideResource extends Resource
         return $form
             ->schema( [
                 Forms\Components\SpatieMediaLibraryFileUpload::make( 'Hero Image' )
-                                                             ->hint( 'Max 2 mb, dimension:4 by 3' )
+                                                             ->hint( 'Max 2 mb, dimension: 16:9' )
                                                              ->disk( 's3' )
                                                              ->columnSpanFull()
                                                              ->imageEditor()
                                                              ->responsiveImages()
-                                                             ->rules( [ 'required', 'max:2024', 'mimes:jpg,png', 'dimensions:ratio=4/3' ] )
+                                                             ->rules( [ 'required', 'max:2024', 'mimes:jpg,png', 'dimensions:ratio=16/9' ] )
                                                              ->required(),
                 Forms\Components\TextInput::make( 'title' )
                                           ->columnSpanFull()

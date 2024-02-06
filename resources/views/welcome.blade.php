@@ -14,10 +14,10 @@
 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
     <div class="min-h-screen w-full bg-logo-dark-blue">
         <div class="container py-6 relative" x-data="{ show: false, showMenu: false }">
-            <div class="absolute inset-0">
+            <div>
                 <livewire:frontpage.hero-slide/>
             </div>
-            <div class="flex flex-col">
+            <div class="absolute inset-0 flex flex-col">
                 <div class="flex flex-col">
                     <div class="flex justify-between items-center relative">
                         <div class="h-12 md:h-20 overflow-hidden">
