@@ -1,4 +1,4 @@
-<div x-data="slider()">
+<div x-data="slider()" class="container">
     <div class="swiper" x-on:mouseenter="pause" x-on:mouseover="pause" x-on:mouseleave="play">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
