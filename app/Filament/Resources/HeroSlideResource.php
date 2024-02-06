@@ -32,11 +32,12 @@ class HeroSlideResource extends Resource
                 Forms\Components\SpatieMediaLibraryFileUpload::make( 'Hero Image' )
                                                              ->hint( 'Max 2 mb, dimension: 16:9' )
                                                              ->disk( 's3' )
+                                                             ->image()
                                                              ->columnSpanFull()
                                                              ->imageEditor()
                                                              ->imageCropAspectRatio( '16:9' )
                                                              ->responsiveImages()
-                                                             ->rules( [ 'required', 'max:2024', 'mimes:jpg,png' ] )
+                                                             ->rules( [ 'required', 'image', 'max:2024', 'mimes:jpg,png' ] )
                                                              ->required(),
                 Forms\Components\TextInput::make( 'title' )
                                           ->columnSpanFull()
@@ -51,6 +52,12 @@ class HeroSlideResource extends Resource
                                           ->columnSpanFull(),
                 Forms\Components\TextInput::make( 'order' )
                                           ->unique( ignoreRecord: true )
+                                          ->default( function () {
+                                              $max = HeroSlide::max( 'order' );
+                                              $max = $max + 10;
+
+                                              return $max;
+                                          } )
                                           ->numeric()
                                           ->required()
                                           ->numeric(),

@@ -1,7 +1,8 @@
 import './bootstrap';
 // import Swiper JS
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
+
 // import Swiper styles
-import 'swiper/css';
+import 'swiper/css/bundle';
 
 window.Swiper = Swiper;

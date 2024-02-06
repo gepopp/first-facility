@@ -8,7 +8,6 @@ export default {
     theme: {
         container: {
             center: true,
-            padding: '2rem',
         },
         fontFamily: {
           sans: ['montserrat', 'Arial', 'sans-serif']
