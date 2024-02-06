@@ -175,6 +175,7 @@
             },
             startAutoplay() {
 
+                this.isPaused = false;
                 this.rest = this.delay();
 
                 this.interval = setInterval(() => {
