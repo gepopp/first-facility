@@ -1,7 +1,7 @@
-<div class="flex flex-col">
+<div class="flex flex-col px-4 sm:px-10">
     <div class="flex justify-between items-center relative">
-        <div class="h-12 md:h-20 overflow-hidden">
-            <x-logo class="object-cover h-full"/>
+        <div class="w-48 max-w-2/3 overflow-hidden">
+            <x-logo class="object-cover max-h-full"/>
         </div>
         <div>
             <div class="md:hidden">
