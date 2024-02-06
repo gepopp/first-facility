@@ -13,6 +13,9 @@ export default {
           sans: ['montserrat', 'Arial', 'sans-serif']
         },
         extend: {
+            dropShadow:{
+              logo: '9px 10px 10px #050B1A'
+            },
             colors: {
                 "logo-blue": "#10275B",
                 "logo-dark-blue": "#050B1A",
