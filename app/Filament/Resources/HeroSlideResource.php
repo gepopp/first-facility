@@ -24,10 +24,10 @@ class HeroSlideResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Form $form): Form
+    public static function form( Form $form ): Form
     {
         return $form
-            ->schema([
+            ->schema( [
                 Forms\Components\SpatieMediaLibraryFileUpload::make( 'Hero Image' )
                                                              ->hint( 'Max 2 mb, dimension:4 by 3' )
                                                              ->disk( 's3' )
@@ -48,12 +48,15 @@ class HeroSlideResource extends Resource
                                           ->maxLength( 65535 )
                                           ->columnSpanFull(),
                 Forms\Components\TextInput::make( 'order' )
+                                          ->unique( ignoreRecord: true )
+                                          ->numeric()
                                           ->required()
                                           ->numeric(),
                 Forms\Components\TextInput::make( 'delay' )
                                           ->label( 'Shows how long' )
                                           ->hint( 'Time the slide stays on screen, in milliseconds' )
                                           ->required()
+                                          ->numeric()
                                           ->numeric()
                                           ->default( 3000 ),
 
@@ -65,39 +68,39 @@ class HeroSlideResource extends Resource
                                              ->columns( 3 )
                                              ->label( 'Available in Countries' )
                                              ->required(),
-            ]);
+            ] );
     }
 
-    public static function table(Table $table): Table
+    public static function table( Table $table ): Table
     {
         return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('order')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('delay')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
+            ->columns( [
+                Tables\Columns\TextColumn::make( 'order' )
+                                         ->numeric()
+                                         ->sortable(),
+                Tables\Columns\TextColumn::make( 'delay' )
+                                         ->numeric()
+                                         ->sortable(),
+                Tables\Columns\TextColumn::make( 'created_at' )
+                                         ->dateTime()
+                                         ->sortable()
+                                         ->toggleable( isToggledHiddenByDefault: true ),
+                Tables\Columns\TextColumn::make( 'updated_at' )
+                                         ->dateTime()
+                                         ->sortable()
+                                         ->toggleable( isToggledHiddenByDefault: true ),
+            ] )
+            ->filters( [
                 //
-            ])
-            ->actions([
+            ] )
+            ->actions( [
                 Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+            ] )
+            ->bulkActions( [
+                Tables\Actions\BulkActionGroup::make( [
                     Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+                ] ),
+            ] );
     }
 
     public static function getRelations(): array
@@ -110,9 +113,9 @@ class HeroSlideResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListHeroSlides::route('/'),
-            'create' => Pages\CreateHeroSlide::route('/create'),
-            'edit' => Pages\EditHeroSlide::route('/{record}/edit'),
+            'index'  => Pages\ListHeroSlides::route( '/' ),
+            'create' => Pages\CreateHeroSlide::route( '/create' ),
+            'edit'   => Pages\EditHeroSlide::route( '/{record}/edit' ),
         ];
     }
 }
