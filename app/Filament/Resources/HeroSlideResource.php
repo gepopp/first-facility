@@ -77,20 +77,10 @@ class HeroSlideResource extends Resource
     {
         return $table
             ->columns( [
-                Tables\Columns\TextColumn::make( 'order' )
-                                         ->numeric()
-                                         ->sortable(),
-                Tables\Columns\TextColumn::make( 'delay' )
-                                         ->numeric()
-                                         ->sortable(),
-                Tables\Columns\TextColumn::make( 'created_at' )
-                                         ->dateTime()
-                                         ->sortable()
-                                         ->toggleable( isToggledHiddenByDefault: true ),
-                Tables\Columns\TextColumn::make( 'updated_at' )
-                                         ->dateTime()
-                                         ->sortable()
-                                         ->toggleable( isToggledHiddenByDefault: true ),
+                Tables\Columns\TextInputColumn::make( 'order' )
+                                              ->rules( [ 'required', 'integer', 'min:1' ] )
+                                              ->sortable(),
+                Tables\Columns\TextColumn::make( 'title' ),
             ] )
             ->filters( [
                 //

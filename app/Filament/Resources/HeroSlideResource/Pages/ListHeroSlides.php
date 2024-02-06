@@ -9,7 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 
 class ListHeroSlides extends ListRecords
 {
-    use Translatable;
+    use \Filament\Resources\Pages\ManageRecords\Concerns\Translatable;
 
 
     protected static string $resource = HeroSlideResource::class;
@@ -17,7 +17,7 @@ class ListHeroSlides extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\LocaleSwitcher::make(),
+//            Actions\LocaleSwitcher::make(),
             Actions\CreateAction::make(),
         ];
     }

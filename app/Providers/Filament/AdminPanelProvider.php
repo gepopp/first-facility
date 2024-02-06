@@ -55,6 +55,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])->plugin( SpatieLaravelTranslatablePlugin::make()
-                                                       ->defaultLocales(['en', 'de',]));
+                                                       ->defaultLocales(['en', 'de', 'bg', 'cz', 'hu', 'mk', 'ro', 'sr', 'sl' ]));
     }
 }
