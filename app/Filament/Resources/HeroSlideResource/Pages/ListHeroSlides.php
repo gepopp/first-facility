@@ -17,8 +17,8 @@ class ListHeroSlides extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
+            Actions\LocaleSwitcher::make(),
             Actions\CreateAction::make(),
-            Actions\LocaleSwitcher::make()
         ];
     }
 }

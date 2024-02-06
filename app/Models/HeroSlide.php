@@ -14,9 +14,11 @@ class HeroSlide extends Model implements HasMedia
     use HasFactory, HasTranslations, InteractsWithMedia;
 
 
-    public $translatable = ['title', 'description'];
+    public $translatable = [ 'title', 'description' ];
 
     protected $casts = [
+        'title'       => 'array',
+        'description' => 'array',
         'countries'   => 'array',
         'order'       => 'integer',
         'delay'       => 'integer',
