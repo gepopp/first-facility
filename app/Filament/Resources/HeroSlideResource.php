@@ -25,7 +25,6 @@ class HeroSlideResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 
-
     public static function form( Form $form ): Form
     {
         return $form
@@ -35,6 +34,7 @@ class HeroSlideResource extends Resource
                                                              ->disk( 's3' )
                                                              ->columnSpanFull()
                                                              ->imageEditor()
+                                                             ->imageCropAspectRatio( '16:9' )
                                                              ->responsiveImages()
                                                              ->rules( [ 'required', 'max:2024', 'mimes:jpg,png', 'dimensions:ratio=16/9' ] )
                                                              ->required(),
