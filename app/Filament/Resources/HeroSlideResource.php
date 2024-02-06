@@ -36,7 +36,7 @@ class HeroSlideResource extends Resource
                                                              ->imageEditor()
                                                              ->imageCropAspectRatio( '16:9' )
                                                              ->responsiveImages()
-                                                             ->rules( [ 'required', 'max:2024', 'mimes:jpg,png', 'dimensions:ratio=16/9' ] )
+                                                             ->rules( [ 'required', 'max:2024', 'mimes:jpg,png' ] )
                                                              ->required(),
                 Forms\Components\TextInput::make( 'title' )
                                           ->columnSpanFull()

@@ -9,7 +9,7 @@ use Filament\Resources\Pages\EditRecord;
 
 class EditHeroSlide extends EditRecord
 {
-    use Translatable;
+    use \Filament\Resources\Pages\EditRecord\Concerns\Translatable;
 
     protected static string $resource = HeroSlideResource::class;
 
