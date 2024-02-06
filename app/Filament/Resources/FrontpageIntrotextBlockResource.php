@@ -75,7 +75,7 @@ class FrontpageIntrotextBlockResource extends Resource
     {
         return $table
             ->columns( [
-                //
+                Tables\Columns\TextColumn::make('heading')
             ] )
             ->filters( [
                 //
