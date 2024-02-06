@@ -11,8 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('frontapge_introtext_blocks', function (Blueprint $table) {
+        Schema::create('frontpage_introtext_blocks', function (Blueprint $table) {
             $table->id();
+            $table->json('countries');
+            $table->json('pre_heading');
+            $table->json('heading');
+            $table->json('excerpt');
+            $table->json('text');
+            $table->json('links')->nullable();
+            $table->text('embed_code')->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('frontapge_introtext_blocks');
+        Schema::dropIfExists('frontpage_introtext_blocks');
     }
 };

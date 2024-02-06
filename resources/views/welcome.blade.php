@@ -11,8 +11,13 @@
     @livewireStyles
 </head>
 <body class="antialiased">
-<div class="min-h-screen w-full bg-logo-dark-blue">
+<div class="w-full bg-logo-dark-blue">
         <livewire:frontpage.hero-slide/>
+</div>
+<div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% min-h-screen pt-64">
+    <div class="container">
+
+    </div>
 </div>
 
 
