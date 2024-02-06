@@ -7,7 +7,7 @@
                 <div class="swiper-slide">
                     <div class="relative flex justify-center items-center aspect-[2/2.5] md:aspect-video overflow-hidden w-full bg-gray-50 clip-slide-vertical -mt-1">
                         <img src="{{ $slide->getFirstMediaUrl() }}" class="min-h-full w-full object-cover brightness-75" alt="{{ $slide->title }}"/>
-                        <div class="absolute inset-0 flex items-center px-20">
+                        <div class="absolute inset-0 flex items-center pl-24">
                             <div class="max-w-2xl z-50">
                                 <h2 class="text-xl md:text-2xl lg:text-3xl xl:text-7xl font-bold text-white uppercase drop-shadow-logo">{{ $slide->title }}</h2>
                                 <p class="text-white">{{ $slide->description }}</p>
@@ -20,6 +20,10 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="absolute left-10 bottom-0 h-[66%] flex flex-col justify-center z-50">
+            <p class="text-white text-lg mt-5">01</p>
+            <div class="w-0.5 mx-auto bg-white/75 h-full"></div>
         </div>
         <div class="absolute right-0 mr-10 top-1/2 -translate-y-1/2 z-10">
             <div class="relative z-50">
@@ -200,7 +204,6 @@
                 this.pause();
                 Alpine.raw(this.swiper).slideTo(index);
                 this.pause();
-
             }
         }
     })
