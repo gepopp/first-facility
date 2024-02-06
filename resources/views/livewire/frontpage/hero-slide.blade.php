@@ -13,13 +13,26 @@
                                 <p class="text-white">{{ $slide->description }}</p>
 
                                 <div class="mt-10">
-                                    <a href="{{ $slide->link }}" class="drop-shadow-logo clip-path-left bg-logo-light-blue text-white py-2 px-6 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
+                                    <a href="{{ $slide->link }}" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="absolute right-0 mr-10 top-1/2 -translate-y-1/2 z-10">
+            <div class="relative z-50">
+                <template x-for="(slide, index ) in slides" :key="slide.id">
+                    <div class="py-4 border-r-4 my-2 z-50 cursor-pointer"
+                         x-on:click="gotoSlide(index)"
+                         :class="index == currentSlide ? 'border-logo-dark-blue': 'border-white'">
+                        <p class="mr-4 uppercase"
+                           :class="index == currentSlide ? 'border-logo-dark-blue text-logo-dark-blue font-semibold': 'text-white'"
+                           x-text="slide.title[lang]"></p>
+                    </div>
+                </template>
+            </div>
         </div>
         <div class="absolute top-0 left-0 w-full z-10 px-10 pt-5">
             <x-menubar/>
@@ -124,6 +137,7 @@
 
     Alpine.data('slider', () => {
         return {
+            lang: '{{ app()->getLocale() }}',
             swiper: null,
             slides: slides,
             currentSlide: 0,
@@ -181,6 +195,12 @@
                 clearInterval(this.interval);
                 this.isPaused = false;
                 Alpine.raw(this.swiper).slideNext();
+            },
+            gotoSlide(index){
+                this.pause();
+                Alpine.raw(this.swiper).slideTo(index);
+                this.pause();
+
             }
         }
     })
