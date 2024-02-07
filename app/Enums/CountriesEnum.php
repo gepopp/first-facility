@@ -22,4 +22,12 @@ enum CountriesEnum : string implements HasLabel
     {
         return Str::replace( '_', ' ', $this->name );
     }
+
+    public static function toAssociativeArray(): array
+    {
+        foreach(self::cases() as $case) {
+            $array[$case->value] = $case->name;
+        }
+        return $array;
+    }
 }

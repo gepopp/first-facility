@@ -51,6 +51,11 @@
         </div>
     </div>
 </div>
+<div class="py-64">
+    <div class="container">
+        <livewire:intercative-map/>
+    </div>
+</div>
 
 
 @if( config('app.debug') )
