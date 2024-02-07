@@ -88,6 +88,8 @@ class HeroSlideResource extends Resource
                                               ->rules( [ 'required', 'integer', 'min:1' ] )
                                               ->sortable(),
                 Tables\Columns\TextColumn::make( 'title' ),
+                Tables\Columns\TextInputColumn::make( 'delay' )
+                                              ->rules( [ 'required', 'integer', 'min:1' ] ),
             ] )
             ->filters( [
                 //
