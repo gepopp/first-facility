@@ -9,7 +9,7 @@ enum CountriesEnum : string implements HasLabel
 {
     case Austria        = 'de';
     case Bulgaria       = 'bg';
-    case Check_Republic = 'cs';
+    case Check_Republic = 'cz';
     case Hungaria       = 'hu';
     case Macedonia      = 'mk';
     case Romania        = 'ro';
