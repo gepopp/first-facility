@@ -34,9 +34,112 @@
     })
 </script>
 <div x-data="map" class="relative">
-    <div class="absolute top-0 left-0 max-w-md">
+    <div class="absolute top-0 left-24 max-w-md">
         <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-logo-blue drop-shadow-logo"> 9
             countries - 1 team</h2>
+
+
+        <div class="flex flex-col text-logo-dark-blue space-y-4 divide-y divide-logo-dark-blue font-semibold">
+            <a href="#" class="hover:underline pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto">
+                    <p>Austria</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">
+                    <p>Bulgaria</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">
+                    <p>Czeck Republic</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto">
+                    <p>Hungary</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">
+                    <p>North Makedonia</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto">
+                    <p>Romania</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto">
+                    <p>Serbia</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto">
+                    <p>Slovakia</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+            <a href="#" class="pt-4 block flex justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto">
+                    <p>Slovenia</p>
+                </div>
+                <div>
+                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                    </svg>
+                </div>
+            </a>
+        </div>
     </div>
     <div id="map" x-intersect.half.once="showCountries" class="pl-48">
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
