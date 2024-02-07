@@ -65,7 +65,7 @@
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
                     <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">
-                    <p>Czeck Republic</p>
+                    <p>Czech Republic</p>
                 </div>
                 <div>
                     <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -87,7 +87,7 @@
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
                     <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">
-                    <p>North Makedonia</p>
+                    <p>North Macedonia</p>
                 </div>
                 <div>
                     <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -143,7 +143,7 @@
     </div>
     <div id="map" x-intersect.half.once="showCountries" class="pl-48">
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 1000 684" fill="#fefefe" stroke="#d1d1d1" stroke-width="1" xml:space="preserve">
+             viewBox="0 0 1000 684" fill="#fefefe" stroke="#d1d1d1" stroke-width="2" xml:space="preserve">
             <path id="AL" class="st0" d="M615.4,462.7l0.8,0.6l3.2,4.7l2.3,0.8l3.1,2.1l2.3,5.2l0.2,3.6l-0.8,4.2l0.5,3.4l-1.3,1.3l1.1,3.2
 	l0.3,3.1l1.9,3.6l1.9,1.8l2.1,3.9l2.6-0.3l2.1,1.8v1.8l1.8,2.9l-1.3,4.2l-2.8,1.3l-1.9,5l-0.5,3.2l-1,0.8l-3.1,0.5l-2.8,2.1l1.6,3.6
 	l-1.5,1.1l-0.5,2.4l-1.1,1.1l-4.4-1.5l-1.1-4.1l-2.8-4.4l-7.9-4.2l-1.9-1.8l0.6-2.4l-0.2-2.3l-2.3-3.9l0.5-4.2l1.3-3.6l-0.5-4.4
@@ -516,12 +516,12 @@
             <rect id="_x31_" x="486.9" y="274.5" class="st0" width="0" height="0"/>
             <rect id="_x32_" x="398.7" y="38.9" class="st0" width="0" height="0"/>
             <style type="text/css">
-                .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
-                .st1{clip-path:url(#SVGID_00000134934423264919911060000018273123396311721399_);}
-                .st2{fill:#ED3027;}
-                .st3{clip-path:url(#SVGID_00000083772880425323231110000013555119442753611197_);}
-                .st4{clip-path:url(#SVGID_00000153694349622759687440000009468092033735397819_);}
-                .st5{fill:#FFFFFF;}
+                #flag-AT .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
+                #flag-AT .st1{clip-path:url(#SVGID_00000134934423264919911060000018273123396311721399_);}
+                #flag-AT .st2{fill:#ED3027;}
+                #flag-AT .st3{clip-path:url(#SVGID_00000083772880425323231110000013555119442753611197_);}
+                #flag-AT .st4{clip-path:url(#SVGID_00000153694349622759687440000009468092033735397819_);}
+                #flag-AT .st5{fill:#FFFFFF;}
             </style>
             <g id="flag-AT" style="visibility: hidden">
                 <g>
