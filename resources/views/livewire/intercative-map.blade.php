@@ -13,7 +13,7 @@
                         setTimeout(() => this.current = 'at', 500);
                     }
                     code = codes.shift();
-                    let country = document.getElementById( code.toUpperCase() );
+                    let country = document.getElementById(code.toUpperCase());
                     country.style.fill = '#10275B';
                     country.style.stroke = '#ffffff';
                 }, 150);
@@ -23,162 +23,191 @@
     })
 </script>
 <div x-data="map" class="relative">
-    <div class="absolute top-0 left-24 max-w-md pointer-events-none">
+    <div class="absolute top-0 left-24 max-w-lg pointer-events-none">
         <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-logo-blue drop-shadow-logo"> 9
             countries - 1 team</h2>
 
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
 
-        <div class="flex flex-col text-logo-dark-blue space-y-4 divide-y divide-logo-dark-blue font-semibold pointer-events-auto">
-            <a class="hover:underline pt-4 block flex justify-between" x-on:click="current = 'at'">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto">
-                    <p>Austria</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <div class="bg-white p-4" x-show="current == 'at'" x-collapse>
-                <ul class="font-base text-logo-blue list-inside list-disc">
-                    <li>Since 1989</li>
-                    <li>40 Projects</li>
-                    <li>6000 square meters in care</li>
-                </ul>
-                <div class="mt-5">
-                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                </div>
-            </div>
-            <a href="#" class="pt-4 block flex justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">
-                    <p>Bulgaria</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <a class="pt-4 block flex justify-between" x-on:click="current = 'cz'">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">
-                    <p>Czech Republic</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <div class="bg-white p-4" x-show="current == 'cz'" x-collapse>
-                <ul class="font-base text-logo-blue list-inside list-disc">
-                    <li>Since 1989</li>
-                    <li>40 Projects</li>
-                    <li>6000 square meters in care</li>
-                </ul>
-                <div class="mt-5">
-                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+        <div class="grid grid-cols-2 gap-4 text-logo-dark-blue font-semibold pointer-events-auto">
+            <div>
+                <a class="hover:underline pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'at'">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto">
+                        <p>Austria</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="bg-white p-4" x-show="current == 'at'" x-collapse>
+                    <ul class="font-base text-logo-blue list-inside list-disc">
+                        <li>Since 1989</li>
+                        <li>40 Projects</li>
+                        <li>6000 square meters in care</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                    </div>
                 </div>
             </div>
-            <a class="pt-4 block flex justify-between cursor-pointer" x-on:click="current = 'hu'">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto">
-                    <p>Hungary</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <div class="bg-white p-4" x-show="current == 'hu'" x-collapse>
-                <ul class="font-base text-logo-blue list-inside list-disc">
-                    <li>Since 1989</li>
-                    <li>40 Projects</li>
-                    <li>6000 square meters in care</li>
-                </ul>
-                <div class="mt-5">
-                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+            <div>
+                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">
+                        <p>Bulgaria</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <a class="pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'cz'">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">
+                        <p>Czech Republic</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="bg-white p-4" x-show="current == 'cz'" x-collapse>
+                    <ul class="font-base text-logo-blue list-inside list-disc">
+                        <li>Since 1989</li>
+                        <li>40 Projects</li>
+                        <li>6000 square meters in care</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                    </div>
                 </div>
             </div>
-            <a href="#" class="pt-4 block flex justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">
-                    <p>North Macedonia</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <a class="pt-4 block flex justify-between cursor-pointer" x-on:click="current = 'ro'">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto">
-                    <p>Romania</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <div class="bg-white p-4" x-show="current == 'ro'" x-collapse>
-                <ul class="font-base text-logo-blue list-inside list-disc">
-                    <li>Since 1989</li>
-                    <li>40 Projects</li>
-                    <li>6000 square meters in care</li>
-                </ul>
-                <div class="mt-5">
-                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+
+            <div>
+                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'hu'">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto">
+                        <p>Hungary</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="bg-white p-4" x-show="current == 'hu'" x-collapse>
+                    <ul class="font-base text-logo-blue list-inside list-disc">
+                        <li>Since 1989</li>
+                        <li>40 Projects</li>
+                        <li>6000 square meters in care</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                    </div>
                 </div>
             </div>
-            <a href="#" class="pt-4 block flex justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto">
-                    <p>Serbia</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <a class="pt-4 block flex justify-between cursor-pointer" x-on:click="current = 'sk'">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto">
-                    <p>Slovakia</p>
-                </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
-            <div class="bg-white p-4" x-show="current == 'sk'" x-collapse>
-                <ul class="font-base text-logo-blue list-inside list-disc">
-                    <li>Since 1989</li>
-                    <li>40 Projects</li>
-                    <li>6000 square meters in care</li>
-                </ul>
-                <div class="mt-5">
-                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+
+            <div>
+                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">
+                        <p>North Macedonia</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+
+            <div>
+                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'ro'">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto">
+                        <p>Romania</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="bg-white p-4" x-show="current == 'ro'" x-collapse>
+                    <ul class="font-base text-logo-blue list-inside list-disc">
+                        <li>Since 1989</li>
+                        <li>40 Projects</li>
+                        <li>6000 square meters in care</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                    </div>
                 </div>
             </div>
-            <a href="#" class="pt-4 block flex justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto">
-                    <p>Slovenia</p>
+
+            <div>
+                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto">
+                        <p>Serbia</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
+
+            <div>
+                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'sk'">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto">
+                        <p>Slovakia</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+                <div class="bg-white p-4" x-show="current == 'sk'" x-collapse>
+                    <ul class="font-base text-logo-blue list-inside list-disc">
+                        <li>Since 1989</li>
+                        <li>40 Projects</li>
+                        <li>6000 square meters in care</li>
+                    </ul>
+                    <div class="mt-5">
+                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                    </div>
                 </div>
-                <div>
-                    <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                    </svg>
-                </div>
-            </a>
+            </div>
+
+            <div>
+                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
+                    <div class="flex items-center space-x-4">
+                        <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto">
+                        <p>Slovenia</p>
+                    </div>
+                    <div>
+                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+
         </div>
     </div>
     <div id="map" x-intersect.half.once="showCountries" class="pl-48">
@@ -186,38 +215,130 @@
              viewBox="0 0 1000 684" fill="#fefefe" stroke="#d1d1d1" stroke-width="1" xml:space="preserve">
 
                       <style type="text/css">
-                          .st0{fill:#ECECEC;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;}
-                          .st1{clip-path:url(#SVGID_00000118388015647621594970000002689245495371688589_);}
-                          .st2{fill:#ED3027;}
-                          .st3{clip-path:url(#SVGID_00000159440130799856529930000005861562545872451238_);}
-                          .st4{clip-path:url(#SVGID_00000138550556135007977830000014076463753480041622_);}
-                          .st5{fill:#FFFFFF;}
-                          .st6{clip-path:url(#SVGID_00000114034890519629554680000004464569009196147383_);}
-                          .st7{fill:#C3212B;}
-                          .st8{clip-path:url(#SVGID_00000077302708396380997580000011939351711041967256_);}
-                          .st9{clip-path:url(#SVGID_00000163036174272177581310000010922311721817436856_);}
-                          .st10{fill:#28477E;}
-                          .st11{clip-path:url(#SVGID_00000164482346488072412710000001969077781895059368_);}
-                          .st12{fill:#C92035;}
-                          .st13{clip-path:url(#SVGID_00000057850232346478569110000012715157147904966529_);}
-                          .st14{clip-path:url(#SVGID_00000166674439488228449450000004575718118111835292_);}
-                          .st15{fill:#313F83;}
-                          .st16{clip-path:url(#SVGID_00000168074625160741015240000012642840254553043391_);}
-                          .st17{fill:#BC2035;}
-                          .st18{clip-path:url(#SVGID_00000038409256270543683670000007300155111660029627_);}
-                          .st19{clip-path:url(#SVGID_00000127030033955632726860000016733423571815442612_);}
-                          .st20{fill:#3C9347;}
-                          .st21{clip-path:url(#SVGID_00000177476040973283925270000003744560937766139577_);}
-                          .st22{fill:#D81E3B;}
-                          .st23{clip-path:url(#SVGID_00000124131276529604559040000010136499528507416199_);}
-                          .st24{fill:#EEE422;}
-                          .st25{clip-path:url(#SVGID_00000178191248944835487910000003278424724985414829_);}
-                          .st26{fill:#2E307F;}
-                          .st27{fill:none;}
-                          .st28{clip-path:url(#SVGID_00000026870151664773792140000001509272860640273289_);}
-                          .st29{fill:#4A2915;}
-                      </style>
+                          .st0 {
+                              fill: #ECECEC;
+                              stroke: #000000;
+                              stroke-width: 0.1;
+                              stroke-linecap: round;
+                              stroke-linejoin: round;
+                          }
 
+                          .st1 {
+                              clip-path: url(#SVGID_00000118388015647621594970000002689245495371688589_);
+                          }
+
+                          .st2 {
+                              fill: #ED3027;
+                          }
+
+                          .st3 {
+                              clip-path: url(#SVGID_00000159440130799856529930000005861562545872451238_);
+                          }
+
+                          .st4 {
+                              clip-path: url(#SVGID_00000138550556135007977830000014076463753480041622_);
+                          }
+
+                          .st5 {
+                              fill: #FFFFFF;
+                          }
+
+                          .st6 {
+                              clip-path: url(#SVGID_00000114034890519629554680000004464569009196147383_);
+                          }
+
+                          .st7 {
+                              fill: #C3212B;
+                          }
+
+                          .st8 {
+                              clip-path: url(#SVGID_00000077302708396380997580000011939351711041967256_);
+                          }
+
+                          .st9 {
+                              clip-path: url(#SVGID_00000163036174272177581310000010922311721817436856_);
+                          }
+
+                          .st10 {
+                              fill: #28477E;
+                          }
+
+                          .st11 {
+                              clip-path: url(#SVGID_00000164482346488072412710000001969077781895059368_);
+                          }
+
+                          .st12 {
+                              fill: #C92035;
+                          }
+
+                          .st13 {
+                              clip-path: url(#SVGID_00000057850232346478569110000012715157147904966529_);
+                          }
+
+                          .st14 {
+                              clip-path: url(#SVGID_00000166674439488228449450000004575718118111835292_);
+                          }
+
+                          .st15 {
+                              fill: #313F83;
+                          }
+
+                          .st16 {
+                              clip-path: url(#SVGID_00000168074625160741015240000012642840254553043391_);
+                          }
+
+                          .st17 {
+                              fill: #BC2035;
+                          }
+
+                          .st18 {
+                              clip-path: url(#SVGID_00000038409256270543683670000007300155111660029627_);
+                          }
+
+                          .st19 {
+                              clip-path: url(#SVGID_00000127030033955632726860000016733423571815442612_);
+                          }
+
+                          .st20 {
+                              fill: #3C9347;
+                          }
+
+                          .st21 {
+                              clip-path: url(#SVGID_00000177476040973283925270000003744560937766139577_);
+                          }
+
+                          .st22 {
+                              fill: #D81E3B;
+                          }
+
+                          .st23 {
+                              clip-path: url(#SVGID_00000124131276529604559040000010136499528507416199_);
+                          }
+
+                          .st24 {
+                              fill: #EEE422;
+                          }
+
+                          .st25 {
+                              clip-path: url(#SVGID_00000178191248944835487910000003278424724985414829_);
+                          }
+
+                          .st26 {
+                              fill: #2E307F;
+                          }
+
+                          .st27 {
+                              fill: none;
+                          }
+
+                          .st28 {
+                              clip-path: url(#SVGID_00000026870151664773792140000001509272860640273289_);
+                          }
+
+                          .st29 {
+                              fill: #4A2915;
+                          }
+                      </style>
 
 
             <path id="AL" d="M615.4,462.7l0.8,0.6l3.2,4.7l2.3,0.8l3.1,2.1l2.3,5.2l0.2,3.6l-0.8,4.2l0.5,3.4l-1.3,1.3l1.1,3.2
@@ -227,7 +348,7 @@
 	L615.4,462.7z"/>
             <path class="country" id="AD" d="M240.5,463.8l-4.5,1.8l-1.1-0.6v-3.4l1.5-1.1l4.2,1V463.8L240.5,463.8z"/>
 
-            <path x-on:click="current = 'at'" x-on:mouseover="current = 'at'"  id="AT" class="country" d="M539.4,311.6l-1.5,3.9l0.2,1.3l2.6,4.7l3.7,4.7l-1,1.1l-1,3.1l1.1,3.2l-6.3,0.5l-4.1-1.5l-2.1,2.3
+            <path x-on:click="current = 'at'" x-on:mouseover="current = 'at'" id="AT" class="country" d="M539.4,311.6l-1.5,3.9l0.2,1.3l2.6,4.7l3.7,4.7l-1,1.1l-1,3.1l1.1,3.2l-6.3,0.5l-4.1-1.5l-2.1,2.3
 	l4.2,1.1l0.8,1.8l-0.8,2.3l-3.6,1.9l0.6,2.4l-0.8,1.1l1.8,2.6l-0.5,2.9l-4.1,0.8l-2.9,2.8l-2.1,1.5l-0.2,3.1l-3.9-0.8l-2.6,0.3
 	l-3.7,1.8l-4.5-0.3l-4.2,0.3l-3.1,1.1l-1.6,2.1l-4.9,1.9l-8.1-1.1l-8.1-1.5l-4.2-0.8l-6.5-0.5l-13.9-2.4l-1.8-0.8l-5-5.7v-3.7
 	l-7.6,2.4l-5-0.3l-5.5,0.5l-2.3,1l-1.9,3.6l-1.8,0.6l-3.4-0.6l-1.5-1.3l-4.9-0.5l-0.8-2.4l-1.3-0.5l-3.2,3.1l-3.7-0.6l-2.4-1.3
@@ -308,7 +429,7 @@
 	l-3.1,0.3l-2.4,1.1l-3.9-2.3l0.2-2.3l2.6-3.1l3.2-3.1h3.6l2.6-1l6.3,0.2l4.5-2.1l4.5-5.8l2.4-2.4l5.3-0.8l4.9-2.8l-1.3,4.1l1.9,2.8
 	v4.9l-1.5,1.6l-2.3,4.1l0.3,9.1l4.1,2.4h6.6l1.6,1.8l-1.1,3.6l-4.2,2.3h-1.5l-2.3-1.8l-1.8,1.5l-1.9,8.3l-3.2-0.2l-1.9,0.8l2.3,1.9
 	l-2.1,1.3l-5.5,5l1.8,5.5l-0.3,1.5l-2.4,2.1l-1,1.8l3.7,0.5L388.7,159.5L388.7,159.5z"/>
-            <path id="EE"class="country" d="M616.7,69.2l6.3,0.3l6.5,2.9l-2.9,1.1l-6,4.1l-0.5,0.8l-4.2-0.2l-2.3,0.3L612,80l-1.5,4.5l-2.6,0.8
+            <path id="EE" class="country" d="M616.7,69.2l6.3,0.3l6.5,2.9l-2.9,1.1l-6,4.1l-0.5,0.8l-4.2-0.2l-2.3,0.3L612,80l-1.5,4.5l-2.6,0.8
 	l-0.5-1.5L610,81l-2.4-2.3l-3.1-1.1l1.5-2.9l-2.6-2.6l2.4-0.3l1.6,0.8l3.2-0.8l0.8-1.6L616.7,69.2L616.7,69.2z M630.1,70.8l-1.5,0.3
 	l-3.9-1.8l1.6-1.6l3.1,0.8L630.1,70.8z M621.4,64.3l-1.3,1.1l-1.5-1l-1.5,2.6l-2.1,0.5l-3.1-4.1l-4.7-0.8l-2.1-1.1l7.3-0.6l1.9-2.6
 	l2.1,0.2l0.6,1.5l3.4,0.5l1.5,1.6L621.4,64.3L621.4,64.3z M707.6,95l-3.1-0.3L699,93l-6.5,1.9l-4.5-1.8l-5.7-4.4l-1-1.1l-3.7-0.8
@@ -605,7 +726,7 @@
 								C478.3,341.3,478.3,333.7,478.3,326.1z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000041989503540604838340000017773930900706968223_">
-                                        <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_1_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000041989503540604838340000017773930900706968223_);">
                                         <path class="st2" d="M478.3,333.7c13.1,3.7,26.1-3.7,39.2,0c0-2.5,0-5.1,0-7.6c-13.1-3.7-26.1,3.7-39.2,0
@@ -620,7 +741,7 @@
 								c0,7.6,0,15.2,0,22.9c-13.1-3.7-26.1,3.7-39.2,0C478.3,341.3,478.3,333.7,478.3,326.1z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000016784658355096749260000011789802310533174435_">
-                                        <use xlink:href="#SVGID_00000054253732640059962520000014712841538163806350_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000054253732640059962520000014712841538163806350_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000016784658355096749260000011789802310533174435_);">
                                         <path class="st2" d="M478.3,348.9c13.1,3.7,26.1-3.7,39.2,0c0-2.5,0-5.1,0-7.6c-13.1-3.7-26.1,3.7-39.2,0
@@ -635,7 +756,7 @@
 								c0,7.6,0,15.2,0,22.9c-13.1-3.7-26.1,3.7-39.2,0C478.3,341.3,478.3,333.7,478.3,326.1z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000122722595162728303140000008290556759688337048_">
-                                        <use xlink:href="#SVGID_00000167369985480909089710000006143682758476673457_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000167369985480909089710000006143682758476673457_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000122722595162728303140000008290556759688337048_);">
                                         <path class="st5" d="M478.3,341.3c13.1,3.7,26.1-3.7,39.2,0c0-2.5,0-5.1,0-7.6c-13.1-3.7-26.1,3.7-39.2,0
@@ -658,7 +779,7 @@
 								c0,8.7,0,17.3,0,26c-14.9-4.2-29.7,4.2-44.6,0C487.2,286.1,487.2,277.4,487.2,268.7z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000041259927085372809670000018401630800135938961_">
-                                        <use xlink:href="#SVGID_00000128486624613201060470000017505585583716695971_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000128486624613201060470000017505585583716695971_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000041259927085372809670000018401630800135938961_);">
                                         <path class="st7" d="M487.2,294.7c14.9,4.2,29.7-4.2,44.6,0c0-8.7,0-17.3,0-26c-14.9-4.2-29.7,4.2-44.6,0
@@ -673,7 +794,7 @@
 								c0,8.7,0,17.3,0,26c-14.9-4.2-29.7,4.2-44.6,0C487.2,286.1,487.2,277.4,487.2,268.7z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000070116988737530476390000014618646636351066498_">
-                                        <use xlink:href="#SVGID_00000069371365459242120620000017946278643645884307_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000069371365459242120620000017946278643645884307_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000070116988737530476390000014618646636351066498_);">
                                         <path class="st5" d="M487.2,281.7c14.9,4.2,29.7-4.2,44.6,0c0-4.3,0-8.7,0-13c-14.9-4.2-29.7,4.2-44.6,0
@@ -688,7 +809,7 @@
 								c0,8.7,0,17.3,0,26c-14.9-4.2-29.7,4.2-44.6,0C487.2,286.1,487.2,277.4,487.2,268.7z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000042017637037568245850000013813196713201742469_">
-                                        <use xlink:href="#SVGID_00000163042380888266578340000012003587940146966702_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000163042380888266578340000012003587940146966702_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000042017637037568245850000013813196713201742469_);">
                                         <path class="st10" d="M487.2,268.7c0,8.7,0,17.3,0,26c6.5-2.5,13-7.4,19.5-12.6C500.2,278.7,493.7,274.9,487.2,268.7z"/>
@@ -715,7 +836,7 @@
 							c0-9.2,0-18.4,0-27.7c15.8,4.4,31.6-4.4,47.4,0C623.9,291.3,623.9,300.6,623.9,309.8z"/>
                                 </defs>
                                 <clipPath id="SVGID_00000144321197614202241670000015232709978973379734_">
-                                    <use xlink:href="#SVGID_00000093177516542591618240000012529765059028020639_"  style="overflow:visible;"/>
+                                    <use xlink:href="#SVGID_00000093177516542591618240000012529765059028020639_" style="overflow:visible;"/>
                                 </clipPath>
                                 <g style="clip-path:url(#SVGID_00000144321197614202241670000015232709978973379734_);">
                                     <path class="st12" d="M623.9,300.6c-15.8-4.4-31.6,4.4-47.4,0c0,3.1,0,6.1,0,9.2c15.8,4.4,31.6-4.4,47.4,0
@@ -730,7 +851,7 @@
 							c0-9.2,0-18.4,0-27.7c15.8,4.4,31.6-4.4,47.4,0C623.9,291.3,623.9,300.6,623.9,309.8z"/>
                                 </defs>
                                 <clipPath id="SVGID_00000020360577631767301470000014789942435643107995_">
-                                    <use xlink:href="#SVGID_00000057860744682925313830000016941367373477342620_"  style="overflow:visible;"/>
+                                    <use xlink:href="#SVGID_00000057860744682925313830000016941367373477342620_" style="overflow:visible;"/>
                                 </clipPath>
                                 <g style="clip-path:url(#SVGID_00000020360577631767301470000014789942435643107995_);">
                                     <path class="st5" d="M623.9,282.1c-15.8-4.4-31.6,4.4-47.4,0c0,3.1,0,6.1,0,9.2c15.8,4.4,31.6-4.4,47.4,0
@@ -745,7 +866,7 @@
 							c0-9.2,0-18.4,0-27.7c15.8,4.4,31.6-4.4,47.4,0C623.9,291.3,623.9,300.6,623.9,309.8z"/>
                                 </defs>
                                 <clipPath id="SVGID_00000047034537706524547760000008756225003058380217_">
-                                    <use xlink:href="#SVGID_00000180356230072767043270000011072441420089732480_"  style="overflow:visible;"/>
+                                    <use xlink:href="#SVGID_00000180356230072767043270000011072441420089732480_" style="overflow:visible;"/>
                                 </clipPath>
                                 <g style="clip-path:url(#SVGID_00000047034537706524547760000008756225003058380217_);">
                                     <path class="st15" d="M623.9,291.3c-15.8-4.4-31.6,4.4-47.4,0c0,3.1,0,6.1,0,9.2c15.8,4.4,31.6-4.4,47.4,0
@@ -773,7 +894,7 @@
 								c0,9.5,0,19,0,28.5c-16.3-4.6-32.6,4.6-49,0C575.7,352.3,575.7,342.8,575.7,333.3z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000099662319480137896610000003404806276510789027_">
-                                        <use xlink:href="#SVGID_00000022534398227571018080000004106747597730798245_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000022534398227571018080000004106747597730798245_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000099662319480137896610000003404806276510789027_);">
                                         <path class="st17" d="M575.7,361.8c16.3,4.6,32.6-4.6,49,0c0-9.5,0-19,0-28.5c-16.3-4.6-32.6,4.6-49,0
@@ -788,7 +909,7 @@
 								c0,9.5,0,19,0,28.5c-16.3-4.6-32.6,4.6-49,0C575.7,352.3,575.7,342.8,575.7,333.3z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000070813780633114065990000003861906766737058483_">
-                                        <use xlink:href="#SVGID_00000061442844988261491140000007408647323989467830_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000061442844988261491140000007408647323989467830_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000070813780633114065990000003861906766737058483_);">
                                         <path class="st5" d="M575.7,361.8c16.3,4.6,32.6-4.6,49,0c0-6.3,0-12.7,0-19c-16.3-4.6-32.6,4.6-49,0
@@ -803,7 +924,7 @@
 								c0,9.5,0,19,0,28.5c-16.3-4.6-32.6,4.6-49,0C575.7,352.3,575.7,342.8,575.7,333.3z"/>
                                     </defs>
                                     <clipPath id="SVGID_00000048469108673802991530000007841599820105547186_">
-                                        <use xlink:href="#SVGID_00000005257621756523224640000009853850403023887247_"  style="overflow:visible;"/>
+                                        <use xlink:href="#SVGID_00000005257621756523224640000009853850403023887247_" style="overflow:visible;"/>
                                     </clipPath>
                                     <g style="clip-path:url(#SVGID_00000048469108673802991530000007841599820105547186_);">
                                         <path class="st20" d="M575.7,361.8c16.3,4.6,32.6-4.6,49,0c0-3.2,0-6.3,0-9.5c-16.3-4.6-32.6,4.6-49,0
@@ -829,7 +950,7 @@
 					c0,12.2,0,24.4,0,36.6c-20.9-5.9-41.8,5.9-62.7,0C680.1,388.3,680.1,376.1,680.1,363.9z"/>
                         </defs>
                         <clipPath id="SVGID_00000140707901338145894250000018046115063515372201_">
-                            <use xlink:href="#SVGID_00000031171840413979976020000013795152891611678115_"  style="overflow:visible;"/>
+                            <use xlink:href="#SVGID_00000031171840413979976020000013795152891611678115_" style="overflow:visible;"/>
                         </clipPath>
                         <g style="clip-path:url(#SVGID_00000140707901338145894250000018046115063515372201_);">
                             <path class="st22" d="M723.3,399.1c6.5-0.5,13.1-0.4,19.6,1.4c0-12.2,0-24.4,0-36.6c-6.5-1.8-13.1-1.9-19.6-1.4
@@ -844,7 +965,7 @@
 					c0,12.2,0,24.4,0,36.6c-20.9-5.9-41.8,5.9-62.7,0C680.1,388.5,680.1,376.3,680.1,364.1z"/>
                         </defs>
                         <clipPath id="SVGID_00000037680345909645264280000003996999710733055637_">
-                            <use xlink:href="#SVGID_00000129204506053683349900000013603713968279052164_"  style="overflow:visible;"/>
+                            <use xlink:href="#SVGID_00000129204506053683349900000013603713968279052164_" style="overflow:visible;"/>
                         </clipPath>
                         <g style="clip-path:url(#SVGID_00000037680345909645264280000003996999710733055637_);">
                             <path class="st24" d="M699.8,402.1c7.8-0.6,15.7-2.2,23.5-2.8c0-12.2,0-24.4,0-36.6c-7.8,0.6-15.7,2.2-23.5,2.8
@@ -859,7 +980,7 @@
 					c0,12.2,0,24.4,0,36.6c-20.9-5.9-41.8,5.9-62.7,0C680.1,388.3,680.1,376.1,680.1,363.9z"/>
                         </defs>
                         <clipPath id="SVGID_00000152228097819127566450000011619115127786020008_">
-                            <use xlink:href="#SVGID_00000177447762718536908160000012291228120973653894_"  style="overflow:visible;"/>
+                            <use xlink:href="#SVGID_00000177447762718536908160000012291228120973653894_" style="overflow:visible;"/>
                         </clipPath>
                         <g style="clip-path:url(#SVGID_00000152228097819127566450000011619115127786020008_);">
                             <path class="st26" d="M680.1,400.5c6.5,1.8,13.1,1.9,19.6,1.4c0-12.2,0-24.4,0-36.6c-6.5,0.5-13.1,0.4-19.6-1.4
@@ -876,7 +997,7 @@
 					c0,12.2,0,24.4,0,36.6c-20.9-5.9-41.8,5.9-62.7,0C680.1,388.3,680.1,376.1,680.1,363.9z"/>
                         </defs>
                         <clipPath id="SVGID_00000152964975705738844020000000543539182326781330_">
-                            <use xlink:href="#SVGID_00000179635101111923013750000017167728501358543547_"  style="overflow:visible;"/>
+                            <use xlink:href="#SVGID_00000179635101111923013750000017167728501358543547_" style="overflow:visible;"/>
                         </clipPath>
                         <g style="clip-path:url(#SVGID_00000152964975705738844020000000543539182326781330_);">
                             <path class="st29" d="M720.5,383.7C720.4,383.7,720.4,383.7,720.5,383.7C720.4,383.7,720.4,383.7,720.5,383.7
