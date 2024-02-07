@@ -1,7 +1,7 @@
 <div class="container pt-0 py-3 relative" x-data="{ show: 0 }">
     <div class="flex flex-col px-4 sm:px-10">
         <div class="flex justify-between items-center relative">
-            <div class="w-48 max-w-2/3 overflow-hidden">
+            <div class="w-96 max-w-2/3 overflow-hidden">
                 <x-logo class="object-cover max-h-full"/>
             </div>
             <div class="flex items-center">
@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="hidden sm:flex text-white space-x-1.5 font-semibold text-xs lg:text-base">
+                <div class="hidden sm:flex text-white space-x-1.5 lg:space-x-4 font-semibold text-xs lg:text-base">
                     <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">AUT</a>
                     <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">BGR</a>
                     <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">CZE</a>
