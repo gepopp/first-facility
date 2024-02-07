@@ -10,11 +10,12 @@ export default {
             center: true,
         },
         fontFamily: {
-          sans: ['montserrat', 'Arial', 'sans-serif']
+            sans: ['montserrat', 'Arial', 'sans-serif'],
+            serif: ["baka-too", "serif"]
         },
         extend: {
-            dropShadow:{
-              logo: '9px 10px 10px #050B1A'
+            dropShadow: {
+                logo: '9px 10px 10px #050B1A'
             },
             colors: {
                 "logo-blue": "#10275B",
