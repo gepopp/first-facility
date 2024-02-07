@@ -20,23 +20,24 @@
 <div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% min-h-screen pt-64">
     <div class="container bg-center bg-opacity-75 relative">
         <div class="flex w-full justify-between">
-            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2">
+            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2 flex-1">
                 <h5 class="font-serif text-3xl lowercase">{{ $infoblock->pre_heading }}</h5>
                 <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold">{{ $infoblock->heading }}</h2>
             </div>
             <div class="w-1/2  flex">
-                <div class="w-1/2">
-                    <p class="text-white font-semibold">{{ $infoblock->excerpt }}</p>
+                <div class="w-1/2 p-4">
+                    <p class="text-white text-sm font-medium">{{ $infoblock->excerpt }}</p>
                 </div>
-                <div class="w-1/2 border-l border-white">
-                    <p class="text-white font-thin">{{ $infoblock->text }}</p>
+                <div class="w-1/2 p-4 border-l border-white">
+                    <p class="text-white text-sm font-thin">{{ $infoblock->text }}</p>
                 </div>>
             </div>
-            <div class="w-1/2">
-
+        </div>
+        <div class="w-1/2 mt-32 float-right">
+            <div class="w-full aspect-videe">
+                <img src="{{ $infoblock->getFirstMediaUrl() }}" class="w-full object-cover clip-path-left"/>
             </div>
         </div>
-
         <div class="absolute inset-0 z-40">
             <img src="{{ asset('backgrounds/square-large.svg') }}" class="object-cover opacity-50">
         </div>
