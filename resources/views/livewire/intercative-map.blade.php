@@ -3,6 +3,7 @@
 
     Alpine.data('map', () => {
         return {
+            current: '',
             codes: countries,
             showCountries() {
                 const codes = Object.keys(Alpine.raw(this.codes));
@@ -28,6 +29,11 @@
                     code = codes.shift();
                     let country = document.getElementById( 'flag-' + code.toUpperCase() );
                     country.style.visibility = 'visible';
+
+                    if(code == 'at'){
+                        this.current = 'at';
+                    }
+
                 }, 150);
             }
         }
@@ -51,6 +57,13 @@
                     </svg>
                 </div>
             </a>
+            <div class="bg-white p-4" x-show="current == 'at'" x-collapse>
+                <ul class="font-base text-logo-blue list-inside list-disc">
+                    <li>Since 1989</li>
+                    <li>40 Projects</li>
+                    <li>6000 square meters in care</li>
+                </ul>
+            </div>
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
                     <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">
