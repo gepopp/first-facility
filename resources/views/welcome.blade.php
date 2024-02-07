@@ -26,10 +26,10 @@
             </div>
             <div class="w-1/2 flex">
                 <div class="w-1/2">
-                    {{ $infoblock->excerpt }}
+                    <p class="text-white font-semibold">{{ $infoblock->excerpt }}</p>
                 </div>
-                <div class="w-1/2">
-                    {{ $infoblock->text }}
+                <div class="w-1/2 border-r border-white">
+                    <p class="text-white font-thin">{{ $infoblock->text }}</p>
                 </div>>
             </div>
             <div class="w-1/2">
