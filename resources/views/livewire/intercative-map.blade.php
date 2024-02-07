@@ -27,6 +27,7 @@
         <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-logo-blue drop-shadow-logo"> 9
             countries - 1 team</h2>
 
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
 
         <div class="flex flex-col text-logo-dark-blue space-y-4 divide-y divide-logo-dark-blue font-semibold pointer-events-auto">
             <a class="hover:underline pt-4 block flex justify-between" x-on:click="current = 'at'">

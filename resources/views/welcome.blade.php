@@ -10,7 +10,7 @@
     @livewireScripts
     @livewireStyles
 </head>
-<body class="antialiased">
+<body class="antialiased text-logo-dark-blue">
 <div class="w-full bg-logo-dark-blue">
     <livewire:frontpage.hero-slide/>
 </div>
