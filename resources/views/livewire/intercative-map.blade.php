@@ -46,6 +46,9 @@
                     <li>40 Projects</li>
                     <li>6000 square meters in care</li>
                 </ul>
+                <div class="mt-5">
+                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                </div>
             </div>
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
@@ -75,6 +78,9 @@
                     <li>40 Projects</li>
                     <li>6000 square meters in care</li>
                 </ul>
+                <div class="mt-5">
+                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                </div>
             </div>
             <a class="pt-4 block flex justify-between cursor-pointer" x-on:click="current = 'hu'">
                 <div class="flex items-center space-x-4">
@@ -93,6 +99,9 @@
                     <li>40 Projects</li>
                     <li>6000 square meters in care</li>
                 </ul>
+                <div class="mt-5">
+                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                </div>
             </div>
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
@@ -122,6 +131,9 @@
                     <li>40 Projects</li>
                     <li>6000 square meters in care</li>
                 </ul>
+                <div class="mt-5">
+                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                </div>
             </div>
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
@@ -151,6 +163,9 @@
                     <li>40 Projects</li>
                     <li>6000 square meters in care</li>
                 </ul>
+                <div class="mt-5">
+                    <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
+                </div>
             </div>
             <a href="#" class="pt-4 block flex justify-between">
                 <div class="flex items-center space-x-4">
