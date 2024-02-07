@@ -60,7 +60,7 @@
 <div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% min-h-screen py-64">
     <div class="container bg-center bg-opacity-75 relative">
         <div class="flex w-full justify-between">
-            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2 flex-1">
+            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2">
                 <h5 class="font-serif text-3xl lowercase">{{ __('The first facility team') }}</h5>
                 <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold">{{ __('Experience & Competence') }}</h2>
             </div>
