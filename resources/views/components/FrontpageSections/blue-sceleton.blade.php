@@ -3,7 +3,7 @@
     class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% overflow-hidden">
     <div class="container relative py-64">
         <div class="flex w-full justify-between" x-intersect:enter.threshold.50="onScreen = true">
-            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2 flex-1">
+            <div class="text-white z-50 pl-12 sm:pl-24 w-1/2 flex-1 overflow-hidden">
                 <h5 x-cloak
                     x-show="onScreen"
                     x-transition:enter="transition ease-out duration-700"
