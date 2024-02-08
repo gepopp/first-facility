@@ -18,12 +18,22 @@
     $infoblock = \App\Models\FrontpageIntrotextBlock::first();
 @endphp
 <x-FrontpageSections.blue-sceleton :preheading="$infoblock->pre_heading" :heading="$infoblock->heading">
-    <div class="w-1/2 p-4">
-        <p class="text-white text-sm font-semibold">{{ $infoblock->excerpt }}</p>
+    <div class="flex">
+        <div class="w-1/2 p-4">
+            <p class="text-white text-sm font-semibold">{{ $infoblock->excerpt }}</p>
+        </div>
+        <div class="w-1/2 p-4 border-l border-white">
+            <p class="text-white text-sm font-thin">{{ $infoblock->text }}</p>
+        </div>
     </div>
-    <div class="w-1/2 p-4 border-l border-white">
-        <p class="text-white text-sm font-thin">{{ $infoblock->text }}</p>
+    <div class="mt-64 w-full aspect-video bg-white clip-path-left">
+        @if( !is_null($infoblock->embed_code) )
+            {!! $infoblock->embed_code !!}
+        @else
+            <img src="{{ $infoblock->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
+        @endif
     </div>
+
 </x-FrontpageSections.blue-sceleton>
 
 

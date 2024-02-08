@@ -9,7 +9,7 @@
                             <div class="absolute inset-0 flex items-center pl-12 sm:pl-24">
                                 <div class="max-w-64 sm:max-w-xs md:max-w-md z-50">
                                     <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-white uppercase drop-shadow-logo">{{ $slide->title }}</h2>
-                                    <p class="sm:leading-none text-white text-xs sm:text-base line-clamp-6 lg:line-clamp-[8]">{{ $slide->description }}</p>
+                                    <p class="sm:leading-tight text-white text-xs sm:text-base line-clamp-6 lg:line-clamp-[8]">{{ $slide->description }}</p>
                                     <div class="mt-10">
                                         <a href="{{ $slide->link }}" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
                                     </div>
