@@ -52,6 +52,8 @@
                         <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">SRB</a>
                         <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">SVK</a>
                         <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">SLO</a>
+                        <span> | </span>
+                        <a href="#" class="hover:border-b-2 hover:pb-0 transition-all border-white">ENGLISH</a>
                     </div>
                 </div>
             </div>

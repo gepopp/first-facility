@@ -40,7 +40,7 @@
 
 
 
-<div class="py-64">
+<div class="py-64 bg-logo-light-blue/10">
     <div class="container">
         <livewire:intercative-map/>
     </div>
