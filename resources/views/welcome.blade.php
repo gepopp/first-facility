@@ -18,20 +18,22 @@
     $infoblock = \App\Models\FrontpageIntrotextBlock::first();
 @endphp
 <x-FrontpageSections.blue-sceleton :preheading="$infoblock->pre_heading" :heading="$infoblock->heading">
-    <div class="flex">
-        <div class="w-1/2 p-4">
+    <div class="flex flex-wrap">
+        <div class="w-full sm:w-1/2 p-4 md:w-full lg:w-1/2">
             <p class="text-white text-sm font-semibold">{{ $infoblock->excerpt }}</p>
         </div>
-        <div class="w-1/2 p-4 border-l border-white">
+        <div class="w-full sm:w-1/2 p-4 sm:border-l border-white md:w-full lg:w-1/2 md:border-0 lg:border-l">
             <p class="text-white text-sm font-thin">{{ $infoblock->text }}</p>
         </div>
     </div>
-    <div class="mt-64 w-full aspect-video bg-white clip-path-left">
-        @if( !is_null($infoblock->embed_code) )
-            {!! $infoblock->embed_code !!}
-        @else
-            <img src="{{ $infoblock->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
-        @endif
+    <div class="mt-8 lg:mt-64 md:ml-0 px-4 aspect-video">
+        <div class="bg-white clip-path-left">
+            @if( !is_null($infoblock->embed_code) )
+                {!! $infoblock->embed_code !!}
+            @else
+                <img src="{{ $infoblock->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
+            @endif
+        </div>
     </div>
 
 </x-FrontpageSections.blue-sceleton>
