@@ -17,311 +17,275 @@
                     country.style.fill = '#10275B';
                     country.style.stroke = '#ffffff';
                 }, 150);
-
             },
+            setCurrent() {
+                this.$refs.paths.childNodes.entries().forEach((item) => {
+                    console.log(item[1].id)
+                })
+            },
+            init() {
+                this.$watch('current', () => this.setCurrent());
+            }
         }
     })
 </script>
 <div x-data="map" class="relative">
-    <div class="absolute top-0 left-24 max-w-lg pointer-events-none">
-        <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-logo-blue drop-shadow-logo"> 9
+    <div class="absolute top-0 left-24 max-w-lg pointer-events-none text-white">
+        <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold text-white drop-shadow-logo"> 9
             countries - 1 team</h2>
 
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
             dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
 
-        <div class="grid grid-cols-2 gap-4 text-logo-dark-blue font-semibold pointer-events-auto">
-            <div>
-                <a class="hover:underline pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'at'">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto">
-                        <p>Austria</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-                <div class="bg-white p-4" x-show="current == 'at'" x-collapse>
-                    <ul class="font-base text-logo-blue list-inside list-disc">
-                        <li>Since 1989</li>
-                        <li>40 Projects</li>
-                        <li>6000 square meters in care</li>
-                    </ul>
-                    <div class="mt-5">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">
-                        <p>Bulgaria</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
+{{--        <div class="grid grid-cols-2 gap-4 text-logo-dark-blue font-semibold pointer-events-auto">--}}
+{{--            <div>--}}
+{{--                <a class="hover:underline pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'at'">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Austria</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <div class="bg-white p-4" x-show="current == 'at'" x-collapse>--}}
+{{--                    <ul class="font-base text-logo-blue list-inside list-disc">--}}
+{{--                        <li>Since 1989</li>--}}
+{{--                        <li>40 Projects</li>--}}
+{{--                        <li>6000 square meters in care</li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="mt-5">--}}
+{{--                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div>--}}
+{{--                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Bulgaria</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
 
-            <div>
-                <a class="pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'cz'">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">
-                        <p>Czech Republic</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-                <div class="bg-white p-4" x-show="current == 'cz'" x-collapse>
-                    <ul class="font-base text-logo-blue list-inside list-disc">
-                        <li>Since 1989</li>
-                        <li>40 Projects</li>
-                        <li>6000 square meters in care</li>
-                    </ul>
-                    <div class="mt-5">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                    </div>
-                </div>
-            </div>
+{{--            <div>--}}
+{{--                <a class="pt-4 block flex justify-between border-b border-logo-dark-blue" x-on:click="current = 'cz'">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Czech Republic</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <div class="bg-white p-4" x-show="current == 'cz'" x-collapse>--}}
+{{--                    <ul class="font-base text-logo-blue list-inside list-disc">--}}
+{{--                        <li>Since 1989</li>--}}
+{{--                        <li>40 Projects</li>--}}
+{{--                        <li>6000 square meters in care</li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="mt-5">--}}
+{{--                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div>
-                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'hu'">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto">
-                        <p>Hungary</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-                <div class="bg-white p-4" x-show="current == 'hu'" x-collapse>
-                    <ul class="font-base text-logo-blue list-inside list-disc">
-                        <li>Since 1989</li>
-                        <li>40 Projects</li>
-                        <li>6000 square meters in care</li>
-                    </ul>
-                    <div class="mt-5">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                    </div>
-                </div>
-            </div>
+{{--            <div>--}}
+{{--                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'hu'">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Hungary</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <div class="bg-white p-4" x-show="current == 'hu'" x-collapse>--}}
+{{--                    <ul class="font-base text-logo-blue list-inside list-disc">--}}
+{{--                        <li>Since 1989</li>--}}
+{{--                        <li>40 Projects</li>--}}
+{{--                        <li>6000 square meters in care</li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="mt-5">--}}
+{{--                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div>
-                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">
-                        <p>North Macedonia</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
-
-
-            <div>
-                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'ro'">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto">
-                        <p>Romania</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-                <div class="bg-white p-4" x-show="current == 'ro'" x-collapse>
-                    <ul class="font-base text-logo-blue list-inside list-disc">
-                        <li>Since 1989</li>
-                        <li>40 Projects</li>
-                        <li>6000 square meters in care</li>
-                    </ul>
-                    <div class="mt-5">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto">
-                        <p>Serbia</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
+{{--            <div>--}}
+{{--                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>North Macedonia</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
 
 
-            <div>
-                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'sk'">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto">
-                        <p>Slovakia</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-                <div class="bg-white p-4" x-show="current == 'sk'" x-collapse>
-                    <ul class="font-base text-logo-blue list-inside list-disc">
-                        <li>Since 1989</li>
-                        <li>40 Projects</li>
-                        <li>6000 square meters in care</li>
-                    </ul>
-                    <div class="mt-5">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>
-                    </div>
-                </div>
-            </div>
+{{--            <div>--}}
+{{--                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'ro'">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Romania</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <div class="bg-white p-4" x-show="current == 'ro'" x-collapse>--}}
+{{--                    <ul class="font-base text-logo-blue list-inside list-disc">--}}
+{{--                        <li>Since 1989</li>--}}
+{{--                        <li>40 Projects</li>--}}
+{{--                        <li>6000 square meters in care</li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="mt-5">--}}
+{{--                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
-            <div>
-                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">
-                    <div class="flex items-center space-x-4">
-                        <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto">
-                        <p>Slovenia</p>
-                    </div>
-                    <div>
-                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
-                        </svg>
-                    </div>
-                </a>
-            </div>
+{{--            <div>--}}
+{{--                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Serbia</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
 
-        </div>
+
+{{--            <div>--}}
+{{--                <a class="pt-4 block flex justify-between cursor-pointer border-b border-logo-dark-blue" x-on:click="current = 'sk'">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Slovakia</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--                <div class="bg-white p-4" x-show="current == 'sk'" x-collapse>--}}
+{{--                    <ul class="font-base text-logo-blue list-inside list-disc">--}}
+{{--                        <li>Since 1989</li>--}}
+{{--                        <li>40 Projects</li>--}}
+{{--                        <li>6000 square meters in care</li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="mt-5">--}}
+{{--                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-light-blue text-white py-2 px-8 cursor-pointer uppercase font-medium inline-block text-xs w-36 text-center whitespace-normal">{{ __( 'Switch to country' ) }}</a>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+{{--            <div>--}}
+{{--                <a href="#" class="pt-4 block flex justify-between border-b border-logo-dark-blue">--}}
+{{--                    <div class="flex items-center space-x-4">--}}
+{{--                        <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto">--}}
+{{--                        <p>Slovenia</p>--}}
+{{--                    </div>--}}
+{{--                    <div>--}}
+{{--                        <svg class="w-8" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">--}}
+{{--                            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>--}}
+{{--                        </svg>--}}
+{{--                    </div>--}}
+{{--                </a>--}}
+{{--            </div>--}}
+
+{{--        </div>--}}
     </div>
     <div id="map" x-intersect.half.once="showCountries" class="pl-48">
         <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 1000 684" fill="#fefefe" stroke="#d1d1d1" stroke-width="1" xml:space="preserve">
 
                       <style type="text/css">
-                          .st0 {
-                              fill: #ECECEC;
-                              stroke: #000000;
-                              stroke-width: 0.1;
-                              stroke-linecap: round;
-                              stroke-linejoin: round;
+                          .country {
+                              fill: white;
+                              fill-opacity: .01;
+                              z-index: 10;
                           }
 
-                          .st1 {
-                              clip-path: url(#SVGID_00000118388015647621594970000002689245495371688589_);
+                          .current {
+                              stroke-width: 3;
+                              fill: #10275B !important;
+                              fill-opacity: 1 !important;
+                              z-index: 9999;
+                              transform: translate3d(0, -8px, 0);
+                              filter: drop-shadow(0 0 0.75rem white);
+                          }
+
+                          .flag {
+                              transform: translate3d(0, -10px, 0);
                           }
 
                           .st2 {
                               fill: #ED3027;
                           }
 
-                          .st3 {
-                              clip-path: url(#SVGID_00000159440130799856529930000005861562545872451238_);
-                          }
-
-                          .st4 {
-                              clip-path: url(#SVGID_00000138550556135007977830000014076463753480041622_);
-                          }
-
                           .st5 {
                               fill: #FFFFFF;
-                          }
-
-                          .st6 {
-                              clip-path: url(#SVGID_00000114034890519629554680000004464569009196147383_);
                           }
 
                           .st7 {
                               fill: #C3212B;
                           }
 
-                          .st8 {
-                              clip-path: url(#SVGID_00000077302708396380997580000011939351711041967256_);
-                          }
-
-                          .st9 {
-                              clip-path: url(#SVGID_00000163036174272177581310000010922311721817436856_);
-                          }
 
                           .st10 {
                               fill: #28477E;
                           }
 
-                          .st11 {
-                              clip-path: url(#SVGID_00000164482346488072412710000001969077781895059368_);
-                          }
 
                           .st12 {
                               fill: #C92035;
                           }
 
-                          .st13 {
-                              clip-path: url(#SVGID_00000057850232346478569110000012715157147904966529_);
-                          }
-
-                          .st14 {
-                              clip-path: url(#SVGID_00000166674439488228449450000004575718118111835292_);
-                          }
 
                           .st15 {
                               fill: #313F83;
-                          }
-
-                          .st16 {
-                              clip-path: url(#SVGID_00000168074625160741015240000012642840254553043391_);
                           }
 
                           .st17 {
                               fill: #BC2035;
                           }
 
-                          .st18 {
-                              clip-path: url(#SVGID_00000038409256270543683670000007300155111660029627_);
-                          }
-
-                          .st19 {
-                              clip-path: url(#SVGID_00000127030033955632726860000016733423571815442612_);
-                          }
-
                           .st20 {
                               fill: #3C9347;
                           }
 
-                          .st21 {
-                              clip-path: url(#SVGID_00000177476040973283925270000003744560937766139577_);
-                          }
 
                           .st22 {
                               fill: #D81E3B;
                           }
 
-                          .st23 {
-                              clip-path: url(#SVGID_00000124131276529604559040000010136499528507416199_);
-                          }
 
                           .st24 {
                               fill: #EEE422;
                           }
 
-                          .st25 {
-                              clip-path: url(#SVGID_00000178191248944835487910000003278424724985414829_);
-                          }
 
                           .st26 {
                               fill: #2E307F;
@@ -331,51 +295,33 @@
                               fill: none;
                           }
 
-                          .st28 {
-                              clip-path: url(#SVGID_00000026870151664773792140000001509272860640273289_);
-                          }
-
                           .st29 {
                               fill: #4A2915;
                           }
                       </style>
+            <g x-ref="paths">
 
 
-            <path id="AL" d="M615.4,462.7l0.8,0.6l3.2,4.7l2.3,0.8l3.1,2.1l2.3,5.2l0.2,3.6l-0.8,4.2l0.5,3.4l-1.3,1.3l1.1,3.2
+                <path id="AL" class="country" d="M615.4,462.7l0.8,0.6l3.2,4.7l2.3,0.8l3.1,2.1l2.3,5.2l0.2,3.6l-0.8,4.2l0.5,3.4l-1.3,1.3l1.1,3.2
 	l0.3,3.1l1.9,3.6l1.9,1.8l2.1,3.9l2.6-0.3l2.1,1.8v1.8l1.8,2.9l-1.3,4.2l-2.8,1.3l-1.9,5l-0.5,3.2l-1,0.8l-3.1,0.5l-2.8,2.1l1.6,3.6
 	l-1.5,1.1l-0.5,2.4l-1.1,1.1l-4.4-1.5l-1.1-4.1l-2.8-4.4l-7.9-4.2l-1.9-1.8l0.6-2.4l-0.2-2.3l-2.3-3.9l0.5-4.2l1.3-3.6l-0.5-4.4
 	l0.2-3.4l-1.1-4.7l0.8-3.4l1.5-2.1l-0.3-3.6l-2.4-1.8l-2.6-0.3v-5l-0.5-1h2.8l-2.8-4.5l5.2-8.6l1.8,0.5l1.3,3.4L615.4,462.7
 	L615.4,462.7z"/>
-            <path class="country" id="AD" d="M240.5,463.8l-4.5,1.8l-1.1-0.6v-3.4l1.5-1.1l4.2,1V463.8L240.5,463.8z"/>
+                <path class="country" id="AD" d="M240.5,463.8l-4.5,1.8l-1.1-0.6v-3.4l1.5-1.1l4.2,1V463.8L240.5,463.8z"/>
 
-            <path x-on:click="current = 'at'" x-on:mouseover="current = 'at'" id="AT" class="country" d="M539.4,311.6l-1.5,3.9l0.2,1.3l2.6,4.7l3.7,4.7l-1,1.1l-1,3.1l1.1,3.2l-6.3,0.5l-4.1-1.5l-2.1,2.3
-	l4.2,1.1l0.8,1.8l-0.8,2.3l-3.6,1.9l0.6,2.4l-0.8,1.1l1.8,2.6l-0.5,2.9l-4.1,0.8l-2.9,2.8l-2.1,1.5l-0.2,3.1l-3.9-0.8l-2.6,0.3
-	l-3.7,1.8l-4.5-0.3l-4.2,0.3l-3.1,1.1l-1.6,2.1l-4.9,1.9l-8.1-1.1l-8.1-1.5l-4.2-0.8l-6.5-0.5l-13.9-2.4l-1.8-0.8l-5-5.7v-3.7
-	l-7.6,2.4l-5-0.3l-5.5,0.5l-2.3,1l-1.9,3.6l-1.8,0.6l-3.4-0.6l-1.5-1.3l-4.9-0.5l-0.8-2.4l-1.3-0.5l-3.2,3.1l-3.7-0.6l-2.4-1.3
-	l-0.6-1.6l-5.3-1.3l0.5-1.3l-1.8-4.1l1.6-4.9l-1.5-1.1l2.8-0.8l1.1-0.8l5.7,2.6l1.5,2.3l1.9,0.5l-0.2,2.1l2.6-0.8l1.6-2.6l0.3-3.1
-	l4.5-0.2l4.4,0.6l2.3,3.1l6.2-0.8l1.8-1.5l6.3-2.4l9.2-0.8l0.2-2.3l3.2,0.5l2.4,1.3l4.1-0.8l1.8,0.8l0.3,1.8l1.9,1.5l2.8,0.6
-	l0.5-2.4l-0.5-3.1l-2.8-0.5l1-2.1l-0.2-2.1l-4.1-4.5l1-2.1l5-2.9l4.7-1.3l1.6-1.6l1.1-4.7l3.7,1.5l2.1-1.5l0.3-4.5l3.6,1.9l1.3,2.1
-	l6.3,0.6l2.3-1.1l4.1,0.6l0.2-1.8l2.1-2.6h1.9l0.5-5.2l1.9-0.3l2.6,1.3l2.3-0.6l7.8,2.8l2.4-0.2l4.9,2.8l6.2,0.3l1.9-1.5l8.3,2.4
-	L539.4,311.6L539.4,311.6z"/>
 
-            <path id="BE" class="country" d="M316,258l2.6-0.8l1.3,1.3l1.9,0.2l4.9,3.7l-0.6,2.4l2.8,1.1l0.6,3.2l-3.7,2.1l-1,2.8l-2.8-1.1l-2.1,2.1
+                <path id="BE" class="country" d="M316,258l2.6-0.8l1.3,1.3l1.9,0.2l4.9,3.7l-0.6,2.4l2.8,1.1l0.6,3.2l-3.7,2.1l-1,2.8l-2.8-1.1l-2.1,2.1
 	l-2.3,4.1l-0.3,2.8l3.2,3.9l-1.8,2.8l-5.5,0.6l-4.5-4.2l-5.3-2.4l-2.8-0.2l-0.6-3.2l-1-1l1.3-4.4l-3.1,1l-0.8,2.3l-2.1,1l-3.6,0.5
 	l-3.7-0.5l-0.8-1l1.1-2.3l-1.1-1.1l0.6-2.6l-2.6-1.8l-5.8-0.6L277,269l-1-3.2l-6.8-1.8l-0.8-3.2l-2.6-2.9l-5.2,1.6l-4.7-3.9v-1.9
 	l-1.5-3.6l8.3-4.1l7.6-2.8l0.5,2.1l1.9,1.1l1.9-1l6.3,1.8l5.2-2.4l1-1.9l3.4,0.5l-0.3-1.5l2.3-1.1l2.4,1.3l2.4-1.6l1.8,2.1l4.1-1.3
 	l0.8,2.6l4.2,2.3l3.1-0.6l2.8,2.1l4.2,1.8l-1.6,4.7l-1.8,2.1L316,258L316,258z"/>
-            <path id="BG" class="country" d="M785.4,432.7l0.3,6l-1.5,2.9l-3.2-1l-3.6,0.8l-1.6,3.2l-1.9,1.9v4.2l0.6,6.8l-2.6,1.1l-4.7,6l4.9,2.9
-	l2.8,3.6l3.9,4.1l0.8,1.9l-2.8-0.3l-1.5,0.6h-2.9l-2.4,1l-5.5-4.1l-5.7,0.5l-2.4,1.8l-5.5,0.6l-1.6,3.6l-3.1,0.5l-0.5,2.3l-2.6-0.8
-	l-2.6,1.8l1.1,1.6l1.5,4.4l-0.3,1.3l-4.1,1.9l-2.9-0.5l-5.2,0.6l-5.5,1.5l-2.8-1.8l-6-1.9l-1.5,1l-3.9-2.3l-1.9-2.8l-2.6,0.8
-	l-6.8-0.2l-0.3,1.5l-3.1,0.3l-4.9,1.8l-4.2-0.3l-3.9,0.3l-1.6,1.6l-4.9-0.3v-6.8l0.8-2.8l-1.5-1.6l-2.8-5.3l-5.5-2.9l-5.3-5.2
-	l1.6-0.5l1.8-2.8l-2.3-4.7v-5.3l1.8-1l2.9-0.2l1.8-2.6l2.6-2.8l0.5-2.3l-2.6-1.6l-2.1-2.6l-4.7-2.4l-3.9-6.3l-1-3.9l0.6-3.7l3.4-1.6
-	l0.3-3.1l1.5-1.1l7,4.1l-2.9,3.2l1.5,2.9l6-1l6.3,0.5l8.6,1.6l5.7,0.6l4.1-0.8l15.2,2.8l6.8,0.3l3.7-1l2.6-1.5l1.9-2.6l5.3-3.4
-	l5.2-1.9l7.1-1.5l4.7-0.6l7.3,3.7l5.2,0.6l1.5,1l2.8-0.8l4.1,4.2l3.6,1.1l4.2,0.8L785.4,432.7L785.4,432.7z"/>
-            <path id="BA" class="country" d="M588.7,404.5l4.5-1.1l2.4,1.3l-0.8,4.1l-2.6,4.4l-0.2,4.2l0.8,1.3l3.9,1.9l5.3,4.7l-0.5,1.3l-5-0.2
+
+                <path id="BA" class="country" d="M588.7,404.5l4.5-1.1l2.4,1.3l-0.8,4.1l-2.6,4.4l-0.2,4.2l0.8,1.3l3.9,1.9l5.3,4.7l-0.5,1.3l-5-0.2
 	l-0.8,1.3l5.2,6l-0.3,3.6l-4.1-0.5l-1.1,1.3l-5.2,0.8l2.3,3.6l-3.7,0.3l-3.2,2.8l-0.8,2.8l0.2,2.4l-2.8,0.3l-0.8,1.1l1,4.9l1.8,2.6
 	l-0.2,1.3l-1.8,1.6l-2.8-1.1l-10-6.2l-1-1.5l-2.6,0.2l-1.8-1l0.5-2.6l-4.9-4.1l-2.4-2.6l-0.6-3.6l-3.9-1.8l-8.1-6.6l-2.8-3.2
 	l-4.5-3.7l-3.7-3.9l-2.1-6.5l-5.5-5.2l-3.1-2.1l-0.2-2.3l0.5-8.1l1.9-1l2.9,0.6l2.8,2.9l2.9,1.6l4.4-5.2l5.2,0.5l2.4-1.9l4.4,2.6
 	l4.1,0.2l4.5,1.1l2.8-1l2.6,2.1l3.6-1.6l2.9,0.5l2.9-0.3l4.2,1.1l3.6,0.3l1.8,1.3l2.1,3.6L588.7,404.5z"/>
-            <path id="BY" class="country" d="M728.5,127.9l2.9,2.1l1.9-0.6l3.1-0.2l5,3.6l2.6-1.5l2.4-0.5l5.8,1.9l0.3,3.7l2.8,2.4l3.4-2.1l4.4-1.8
+                <path id="BY" class="country" d="M728.5,127.9l2.9,2.1l1.9-0.6l3.1-0.2l5,3.6l2.6-1.5l2.4-0.5l5.8,1.9l0.3,3.7l2.8,2.4l3.4-2.1l4.4-1.8
 	h5.5l4.4,1.5l3.9,2.9l5.7,2.3l0.6,4.1l-1,2.9l3.4,3.4l0.8,2.1l-2.1,3.2v3.2l6.6,3.2l0.8,0.8l-0.8,2.9l2.3,1l2.9,3.9l2.4,2.3l7.9,3.4
 	l1.1,1.3l-0.6,4.5l8.6,0.8l5.2,2.1v1.8l1.1,1.8l4.5,2.3l1,2.8l-4.2,1.6l-0.5,1.5l-4.9,2.9l-5.7-0.3l-3.9-2.4l-4.7,0.2l-2.3,4.4
 	l6.3,5.3l1,1.6l-0.3,2.4l1.6,2.4l0.8,5.3l2.6,2.3l2.1,2.9l-8.1-0.2l-2.3,1.3l-2.8-0.6l-1.8,0.8l-3.6,3.7l-1.3,1.9l-1.6,5.3l2.9,5.8
@@ -386,21 +332,15 @@
 	l1.3-4.2l3.2,0.3l2.3-1.9l3.4-0.8l1.6-1.1l2.8,3.7l3.2-0.3V174l-1.5-1.8l-3.1-0.8l0.8-3.2l1.6-2.4l-0.6-3.7l1.8-4.9l4.2-1l1.3-1
 	l1.6-3.2l5.8,0.2l0.6-1.8l2.1-1.6l-6.3-1.6l1.1-5v-2.9l4.2-1l1.9-2.4l1.8-0.5l4.9,0.6l5,0.2l0.6-2.8l4.1-3.9l2.3-1.3L728.5,127.9
 	L728.5,127.9z"/>
-            <path id="CH" class="country" d="M387.5,334.7l1.3,1.8l4.2,2.1h1.9l1.5,1.1l-1.6,4.9L394,347l0.2,2.8l1.9,0.2l5.3,1.3l0.6,1.6l2.4,1.3
+                <path id="CH" class="country" d="M387.5,334.7l1.3,1.8l4.2,2.1h1.9l1.5,1.1l-1.6,4.9L394,347l0.2,2.8l1.9,0.2l5.3,1.3l0.6,1.6l2.4,1.3
 	l3.7,0.6l3.2-3.1l1.3,0.5l0.8,2.4l-0.8,5l0.8,2.9l-3.1-0.3l-1.6-1.5l-2.1,0.5l-1,2.9l2.4,5.7l-1.9,0.5l-2.3-3.1l-1.1-0.2l-4.7,1.8
 	l-3.2-1.3l-1.3-3.4l-3.2,0.2v4.7l-0.8,1.8l-3.6,4.2l-0.3,1.6l1.1,2.8l-1.9,1.1l-1.5-2.3l-2.1-1.9l0.6-1.9l-3.6-1l-3.9-3.2l-0.3-4.1
 	l-1.6-1l-5.5,4.7l1,2.4l-2.6,3.6l-3.9,2.3l-5-1.3l-4.2,1.6l-3.9,0.8l-2.3-1.1l-1.5-2.3l-3.7-3.7l0.8-2.8l-1.3-3.6l-3.6-0.5l-3.1,0.2
 	l-3.7,2.4l0.8,2.1l-3.7,2.6l-2.3-0.2v-1.6l2.4-1.6l0.5-2.4l-1.3-1.1l1.8-4.7l4.9-3.6l0.8-4.7l3.4-1.5l6.2-6.5l1-1.5l-2.1-1.8
 	l2.9-2.3h1.8l1.3,1.3l4.4-0.5l1.3-2.3l2.4-1.1l1.6,0.5l4.5,0.2l5.3-1l4.2,0.3l-0.3-2.4l2.1-1.9h2.1l2.3,1.6l1.3-0.3l1.8,1.5
 	L387.5,334.7L387.5,334.7z"/>
-            <path id="CZ" x-on:click="current = 'cz'" x-on:mouseover="current ='cz'" class="country" d="M492.5,255.9l3.4-0.6l-0.2-3.1l5.3,1.3l0.5,1.8l1.6,1.8l7.5,1.8l4.4,1.8l1.3,1.5l5.2-1.1l2.9,1.9
-	l-1.1,1.8l-2.6,1.9l2.6,1.5l3.2,2.9l2.4,3.1l1.6,0.6l5.7-4.1l-2.8-3.9h2.1l3.6,1l5.3,3.1l5.8-1.1v2.6l-2.3,0.8l4.4,3.7l1.6,1
-	l2.9-1.6l5.7,2.9l0.8-0.3l4.4,1.3l0.8,2.9l4.5,3.6l0.8,2.6l-4.5,0.5l-3.2,2.4l-1,1.3l-3.7,1.9l-1.1,4.9l-2.6,1.3l-3.4,3.1l-2.4,1.1
-	l-2.8,0.3l-5.8-0.8l-2.3,1.9l-1.8,4.5l-1.6-2.6l-8.3-2.4l-1.9,1.5l-6.2-0.3l-4.9-2.8l-2.4,0.2l-7.8-2.8l-2.3,0.6l-2.6-1.3l-1.9,0.3
-	l-0.5,5.2h-1.9l-2.1,2.6l-0.2,1.8l-4.1-0.6l-2.3,1.1l-6.3-0.6l-1.3-2.1l-3.6-1.9l-1-1.1l-4.7-3.6h-2.1l-2.1-2.6l-4.1-2.4l-4.7-4.2
-	h-2.1l-3.7-3.2l-2.9-4.4l-2.3-2.4l1.9-2.8l-1-2.6l-3.7-2.1l-4.1-5.5l0.8-1.1l3.1,3.2l3.1-4.2l1.8-1l4.2-1l3.4,0.6l1.3-2.1l3.2-0.5
-	l1-1.6l2.6-1.1l1.8,0.2l1-1.9l7.1-1.6l5.7-2.4l3.1-1l-2.4-2.4l1.3-1l3.6,0.6l2.4,2.4v1.5l2.3,1L492.5,255.9L492.5,255.9z"/>
-            <path id="DE" class="country" d="M474.7,182.5l-5.5-0.2l-0.3-2.8l-1.8-1.6l-0.2-1.6l7.6,4.2L474.7,182.5z M418.3,169.3h-2.9l-2.3-1.1
+
+                <path id="DE" class="country" d="M474.7,182.5l-5.5-0.2l-0.3-2.8l-1.8-1.6l-0.2-1.6l7.6,4.2L474.7,182.5z M418.3,169.3h-2.9l-2.3-1.1
 	l1.3-1.6l2.8,0.6L418.3,169.3L418.3,169.3z M464.2,170.2l-2.1,1.1H460l-2.1,2.1l-3.4-1.8l-0.8-1.8l0.2-3.6l1-2.3l3.2-1.5l1.5,1.9
 	l2.8,1l-0.8,2.8L464.2,170.2L464.2,170.2z M388.7,159.5l2.9,1.1l2.6,2.6l0.2,2.3l-2.8,2.6l5.2-0.5l1.3,1.9l2.8-0.6l7.3,2.9l5.2-1.5
 	l1.1,2.3l-1,2.4l-3.6,2.6l2.3,1.9l3.4-0.3l5.8,1.5l5.3-4.1l1.8-0.8l5.8-0.5l8.3-7.3l8.6,1.5l2.4,3.1l6,3.4l5.2-0.3l2.1,3.2l1.3,4.1
@@ -417,7 +357,7 @@
 	l-1.6-1.5l0.5-1.5l4.2-2.6l1-4.2l-1.3-1.6l-4.2-0.5l-1.1-1.6l1-2.6l5,0.2l1.8-6.2l1.1-2.8l-0.2-7l-2.8-2.3l0.8-4.4l1.8-2.3l1.5-0.6
 	l6.5-0.5l7.3,0.2l3.1,3.6l-1,1.9l2.6,0.5l1.5-3.9l2.3,1.3l1.8-0.2l-0.8-2.8l0.3-2.6l1.5-2.3l5.3,1l5.8-0.5l0.2-1l-4.5-0.8l-1.5-1.8
 	l-0.3-6.3l-2.4-1.3l-2.6,0.5v-2.4l5.5-1.8v-1.6l-5.5-6.2l-0.3-2.6l4.4,0.2l8.4,2.1l5-1.1L388.7,159.5L388.7,159.5z"/>
-            <path id="DK" class="country" d="M419,157.8l3.4,1.6l3.9,0.5l0.6,3.1l-5.7,1.1l-8.3-3.4l0.2-4.1l3.7-0.3L419,157.8L419,157.8z
+                <path id="DK" class="country" d="M419,157.8l3.4,1.6l3.9,0.5l0.6,3.1l-5.7,1.1l-8.3-3.4l0.2-4.1l3.7-0.3L419,157.8L419,157.8z
 	 M441.2,156.1l-3.7,0.2l-3.1,1.6l-0.5-1.9l2.6-1.6l1.9,0.3L441.2,156.1z M394.5,158l-1.9,0.3l-2.8-0.8l-1-3.7l4.4,1.8L394.5,158
 	L394.5,158z M407.5,161.2l-2.3-2.4l4.1-4.7l1.1-0.3L407.5,161.2z M488.7,154.8l-3.9-0.3l-3.9-1.6l0.2-3.2l0.8-1.5l7.3,3.7
 	L488.7,154.8L488.7,154.8z M404.2,140.7l3.7,7l-0.2,4.5l-2.9,1.9h-3.4l-8.8-2.8l-2.8-4.7l-0.2-3.7l7.8-2.3l4.2,1.3L404.2,140.7z
@@ -429,7 +369,7 @@
 	l-3.1,0.3l-2.4,1.1l-3.9-2.3l0.2-2.3l2.6-3.1l3.2-3.1h3.6l2.6-1l6.3,0.2l4.5-2.1l4.5-5.8l2.4-2.4l5.3-0.8l4.9-2.8l-1.3,4.1l1.9,2.8
 	v4.9l-1.5,1.6l-2.3,4.1l0.3,9.1l4.1,2.4h6.6l1.6,1.8l-1.1,3.6l-4.2,2.3h-1.5l-2.3-1.8l-1.8,1.5l-1.9,8.3l-3.2-0.2l-1.9,0.8l2.3,1.9
 	l-2.1,1.3l-5.5,5l1.8,5.5l-0.3,1.5l-2.4,2.1l-1,1.8l3.7,0.5L388.7,159.5L388.7,159.5z"/>
-            <path id="EE" class="country" d="M616.7,69.2l6.3,0.3l6.5,2.9l-2.9,1.1l-6,4.1l-0.5,0.8l-4.2-0.2l-2.3,0.3L612,80l-1.5,4.5l-2.6,0.8
+                <path id="EE" class="country" d="M616.7,69.2l6.3,0.3l6.5,2.9l-2.9,1.1l-6,4.1l-0.5,0.8l-4.2-0.2l-2.3,0.3L612,80l-1.5,4.5l-2.6,0.8
 	l-0.5-1.5L610,81l-2.4-2.3l-3.1-1.1l1.5-2.9l-2.6-2.6l2.4-0.3l1.6,0.8l3.2-0.8l0.8-1.6L616.7,69.2L616.7,69.2z M630.1,70.8l-1.5,0.3
 	l-3.9-1.8l1.6-1.6l3.1,0.8L630.1,70.8z M621.4,64.3l-1.3,1.1l-1.5-1l-1.5,2.6l-2.1,0.5l-3.1-4.1l-4.7-0.8l-2.1-1.1l7.3-0.6l1.9-2.6
 	l2.1,0.2l0.6,1.5l3.4,0.5l1.5,1.6L621.4,64.3L621.4,64.3z M707.6,95l-3.1-0.3L699,93l-6.5,1.9l-4.5-1.8l-5.7-4.4l-1-1.1l-3.7-0.8
@@ -437,7 +377,7 @@
 	l-2.4-3.2l1.1-1.8l-1.1-4.5l4.9-1.9l5.3-0.3l1.5-2.1l3.2-2.1l3.7,0.3l5-1.6l10.2,0.2l0.6-2.8h5.2l12.3,1.9h2.9l4.5,1.9l2.3,0.5h6.5
 	l10.2,0.8l1.9-1.6l2.4,1.9l-1.6,2.3l-1.9,0.6l-1.5,5.2l-1.3,1.6l-2.8-0.5l-4.1,0.3l-3.2,0.8l-2.1,1.8l0.2,1.8l4.2,3.7l2.3,4.5
 	l4.2,3.6l1.3,2.1l3.9,4.7l2.9,4.1l-3.7,1l-1.9,3.2L707.6,95L707.6,95z"/>
-            <path id="GB" class="country" d="M184.9,260.1l-2.6,2.1l-2.1,0.3l-4.1-1.9v-0.8l4.1-1.8l3.2,1L184.9,260.1z M125.8,195.8l2.1,1.5
+                <path id="GB" class="country" d="M184.9,260.1l-2.6,2.1l-2.1,0.3l-4.1-1.9v-0.8l4.1-1.8l3.2,1L184.9,260.1z M125.8,195.8l2.1,1.5
 	l-5.5,3.1l-1.9-1l-1.5-1.9l-0.2-3.1l1.9-0.8h2.9L125.8,195.8L125.8,195.8z M88,177.3l-3.4,0.6h-4.7l0.2-2.4l-2.3-0.8l-2.9-4.4
 	l-2.1-0.8l-3.1,2.6l0.8,1.5l-3.9,2.9l-4.7-0.5l-1.3-1.1l-3.4-0.6l-0.3-1.6l-4.4-3.2l1.6-2.3l4.7-1.5l-1.6-2.3l0.3-1.3l2.6,0.2
 	l3.6-1.3l1.9-2.6l1.6-3.7l3.1-1.5l2.1,1l3.1-3.2l4.5-0.2l4.4-1.1l6.3,0.5l1.8,1.8l0.8,2.8l2.1,2.8l2.8,2.3v1.5l-3.2,1.8l5.7,0.5
@@ -469,7 +409,7 @@
 	l2.8-0.2l1.9,0.8L150.2,59.6L150.2,59.6z M156.2,55.9l-1.6,0.5l-0.6-1.9l-2.8-1l0.6-1.3L156.2,55.9L156.2,55.9z M182.3,24.3l2.6,2.9
 	l1.6,0.8l-2.1,6.2l-0.3,2.6l-1.6,2.8l-1.3-0.6l1.5-4.7l-0.8-1.8l-2.8,0.5l-0.6-1.5l2.6-2.3l-1.3-3.2l-1.8-0.3l2.4-2.6L182.3,24.3
 	L182.3,24.3z M187,24.9l-2.3-2.1l2.1-1L187,24.9z"/>
-            <path id="GR" class="country" d="M709.7,640.3h3.7l2.8-1.6l3.6,6l2.8-0.2l5.7-1.5l6,0.3l2.3,1.6l4.2,0.3l3.7,0.8l5.3-1.1l0.6,0.6
+                <path id="GR" class="country" d="M709.7,640.3h3.7l2.8-1.6l3.6,6l2.8-0.2l5.7-1.5l6,0.3l2.3,1.6l4.2,0.3l3.7,0.8l5.3-1.1l0.6,0.6
 	l0.2,4.5l1.9,0.3l1.1-1.1l2.8-1h2.9l2.6-1.3l-0.6,5.7l-1.5,0.6l-7.1-0.2l-13.1,1.6l-8.6,0.6l-1.1-0.3l-1.1-3.6l-5.3-1.8l-10-1.6
 	l-2.4-0.6l-5,0.3l-1.8-1.6l-0.6-2.9l0.3-3.1l2.3,0.5l0.6-2.3L709.7,640.3L709.7,640.3z M780.1,642.1l-2.6-3.4l1.8-0.8l1.9,3.9
 	L780.1,642.1L780.1,642.1z M691.4,623.6l-2.3,0.3l-1.1-3.6l0.8-1.6l3.4,3.4L691.4,623.6L691.4,623.6z M793,630.3l-2.8-0.6l0.6-2.9
@@ -502,7 +442,7 @@
 	l-1.8-2.9v-1.8l7.5-0.5l1.5-1l3.7,1l3.9-2.1l2.8-4.1l1.3-0.5l4.9-0.6l5.3,1l4.7-1.6l0.3-3.4l3.2-0.5l4.9,0.3l1.6-1.6l3.9-0.3
 	l4.2,0.3l4.9-1.8l3.1-0.3l0.3-1.5l6.8,0.2l2.6-0.8l1.9,2.8l3.9,2.3l1.5-1l6,1.9l2.8,1.8l5.5-1.5l5.2-0.6l2.9,0.5l4.1-1.9l0.3-1.3
 	l-1.5-4.4l-1.1-1.6l2.6-1.8l2.6,0.8l1.9,0.5l3.7,2.4l1.5,5l-5.5,4.1l0.8,7.1l-4.1,5.2L742.8,508.7L742.8,508.7z"/>
-            <path id="HR" class="country" d="M544.9,451.5l3.7,0.6l-1.8,1.5L544.9,451.5L544.9,451.5z M565.8,453.9l2.6-0.2l1,1.5l10,6.2l2.8,1.1
+                <path id="HR" class="country" d="M544.9,451.5l3.7,0.6l-1.8,1.5L544.9,451.5L544.9,451.5z M565.8,453.9l2.6-0.2l1,1.5l10,6.2l2.8,1.1
 	l1.9,3.1l-7.8-5l-7.1-4.1l-5-1.1l-7-3.2l-0.8-1.5L565.8,453.9L565.8,453.9z M555.6,448.3l-1.3,0.2l-9.1-0.2l-2.8-0.5l-0.8-2.1
 	l2.9,0.3l0.8,1L555.6,448.3z M547,444.5l-3.2,0.2l-4.2-1.3l0.5-1.8l7.8,1L547,444.5z M512.6,417.8l-0.5,0.6l-5.3-4.4l-0.5-3.1
 	l4.5,4.4L512.6,417.8z M504.7,407.3l-3.1-0.3l1.3-1.8L504.7,407.3L504.7,407.3z M497.9,409.7l-1.5-0.2l-2.8-6.8l0.6-1.9l-1.3-3.2
@@ -516,14 +456,8 @@
 	l3.2,1.1l2.6,0.3l1.9-0.6l-1.3-3.7l1.1-1.1l-1.6-1.8l3.4-1.6l3.4-1l0.6-1.8L519,375l-1.5-1.5l0.6-2.3l7.1-2.8l1.1-1.6h3.2v-2.8
 	l1.5-1.3l4.1,1l4.7,1.9l2.8,1.9l1.5,2.1l4.4,2.9l3.6,3.6l2.1,1.1l4.1,1l2.1,2.1l5.3,1.5l7.9,0.3l4.1-1.5l1.8-2.3L584.1,377.9
 	L584.1,377.9z"/>
-            <path id="HU" x-on:click="current = 'hu'" x-on:mouseover="current = 'hu'" class="country" d="M641.8,316.3h2.4l2.3,3.7l3.6,1.3l1.5,1.8l3.7,0.6l1.5,1.1l1.1,2.8l-3.6,3.7l-7.5,1.8l-3.1,3.9
-	l-1.9,1.6l0.2,2.8l-2.3,2.3l-1.1,4.1l-2.3,2.4v1.9l-2.6,4.4l0.3,2.1l-3.4,2.4l-2.4,7.6l-2.1,1.5l-4.2-0.5l-4.1,3.2l-2.3-0.8
-	l-5.2,1.5l-1.6-0.8l-4.5-0.5l-1.8,0.3l-4.7-0.6l-1.6,0.5l-2.4,2.6l-3.6,1.6l-2.6-0.8l-3.4,2.1l-4.7,0.6l-1.8,2.3l-4.1,1.5l-7.9-0.3
-	l-5.3-1.5l-2.1-2.1l-4.1-1l-2.1-1.1l-3.6-3.6l-4.4-2.9l-1.5-2.1l-2.8-1.9l-4.7-1.9l-3.1-3.6l-2.3-5.3l-3.9-0.2l2.9-2.8l4.1-0.8
-	l0.5-2.9l-1.8-2.6l0.8-1.1l-0.6-2.4l3.6-1.9l0.8-2.3l-0.8-1.8l-4.2-1.1l2.1-2.3l4.1,1.5l6.3-0.5l-1.1-3.2l1-3.1l1-1.1l3.4,0.5
-	l6.8,4.4l2.6,1.1l7.6,0.2l11.3-0.6l1-1.6l-0.8-2.1l0.6-1.6l2.3-1.1l7-0.6l3.9-1l1.6-2.4l1.1-0.3l5.7,2.3l8.1-4.1l2.6-5.7l2.9-0.6
-	l4.4,0.2l4.1,1l7.5-1.1l2.3,1.5l3.6,3.6l1,0.3L641.8,316.3L641.8,316.3z"/>
-            <path id="IE" class="country" d="M88,177.3l1.1,1.8l-3.6,0.6l2.4,8.4l1,1.5v6.6l1.5,5.2l0.2,4.1l-2.1,2.9l-1.5,3.4l-0.3,2.9l-2.6,3.4
+
+                <path id="IE" class="country" d="M88,177.3l1.1,1.8l-3.6,0.6l2.4,8.4l1,1.5v6.6l1.5,5.2l0.2,4.1l-2.1,2.9l-1.5,3.4l-0.3,2.9l-2.6,3.4
 	l-2.4,1.5l2.6,2.4l-4.5,1.3l-4.2-0.5l-2.1,1.3l-6.3,0.3l-6,1.1l-2.8,2.9l-4.1,1.1l-1.6,1.6l-3.7,1.3l-2.8-1.9l-1.6,0.3l0.3,3.4
 	l-4.7,2.1l-2.9,0.5l-1.6,1.1l-9.4,2.3l-3.1-0.8l-5.3,1.3l-1.9-0.2l2.6-2.9l2.6-2.1l-6.2,1l-2.3,0.8l-1-1l5.2-3.1l-5.3,0.2l-4.9-0.6
 	L6,231.3l4.7-3.7l3.9-1.5l-0.2-1.5l-8.3,0.2L7,223l2.8-1.6l2.9-0.2l2.4,1l1.8-1.3l-1-2.8l6.3-3.7l4.9-0.5l5.3-1.1l5.3-1.3l-3.9-1.9
@@ -533,7 +467,7 @@
 	l2.6-1.5l1.9,3.2l-1.6,1.6l1,1.5l1.9-1.3l-0.8-3.4l1.5-2.1l3.1-0.5l1-1.3l5.2,2.8l-4.1,2.4l-0.8,1.1l-3.1,1.5l-1.6,3.7l-1.9,2.6
 	l-3.6,1.3l-2.6-0.2l-0.3,1.3l1.6,2.3l-4.7,1.5l-1.6,2.3l4.4,3.2l0.3,1.6l3.4,0.6l1.3,1.1l4.7,0.5l3.9-2.9l-0.8-1.5l3.1-2.6l2.1,0.8
 	l2.9,4.4l2.3,0.8l-0.2,2.4h4.7L88,177.3L88,177.3z"/>
-            <path id="IT" class="country" d="M531,572.1l-1.9,4.1l-4.5,7l-2.4,8.3l0.5,3.2l2.6,2.3l-1.1,0.8l2.6,2.9l0.2,2.1l-2.9,3.1l-0.6,2.8
+                <path id="IT" class="country" d="M531,572.1l-1.9,4.1l-4.5,7l-2.4,8.3l0.5,3.2l2.6,2.3l-1.1,0.8l2.6,2.9l0.2,2.1l-2.9,3.1l-0.6,2.8
 	l0.2,2.4l-4.7-1l-2.3,0.5l-6-2.3l-3.1-4.5l-4.9-3.2h-4.9l-2.3-0.8l-4.7-3.1l-4.9-2.3l-4.2-3.4l-2.8-0.6l-2.4-1.6h-4.7l-3.7-2.6
 	l-2.1-3.7l2.1-6l2.3-1.3l1.5-1.9l3.7,3.7l2.9-1.3l2.3-2.6l3.9,0.2l0.8,1.5l2.3,0.5l4.1,2.6l2.3,0.6l5.5-1.6l4.9,0.6l4.5-0.8l2.8-1
 	l1.9-1.6l2.3-0.5l5.7,0.5l3.2-1.9l1.3,0.3l3.2-1.9L531,572.1L531,572.1z M404.1,504.8l1.1,1.5l2.9,8.1l-1,2.6l-2.1,3.2l1.3,4.5
@@ -556,62 +490,44 @@
 	l2.1,1.9l1.5,2.3l1.9-1.1l-1.1-2.8l0.3-1.6l3.6-4.2l0.8-1.8v-4.7l3.2-0.2l1.3,3.4l3.2,1.3l4.7-1.8l1.1,0.2l2.3,3.1l1.9-0.5l-2.4-5.7
 	l1-2.9l2.1-0.5l1.6,1.5l3.1,0.3l-0.8-2.9l0.8-5l4.9,0.5l1.5,1.3l3.4,0.6l1.8-0.6l1.9-3.6l2.3-1l5.5-0.5l5,0.3l7.6-2.4v3.7l5,5.7
 	l1.8,0.8l13.9,2.4l6.5,0.5L478.9,363.2L478.9,363.2z"/>
-            <path id="LI" class="country" d="M396.1,349.9l-1.9-0.2L394,347l0.8-2.4l1.8,4.1L396.1,349.9L396.1,349.9z"/>
-            <path id="LT" class="country" d="M701.6,139.2v2.9l-1.1,5l6.3,1.6l-2.1,1.6l-0.6,1.8l-5.8-0.2l-1.6,3.2l-1.3,1l-4.2,1l-1.8,4.9l0.6,3.7
+                <path id="LI" class="country" d="M396.1,349.9l-1.9-0.2L394,347l0.8-2.4l1.8,4.1L396.1,349.9L396.1,349.9z"/>
+                <path id="LT" class="country" d="M701.6,139.2v2.9l-1.1,5l6.3,1.6l-2.1,1.6l-0.6,1.8l-5.8-0.2l-1.6,3.2l-1.3,1l-4.2,1l-1.8,4.9l0.6,3.7
 	l-1.6,2.4l-0.8,3.2l3.1,0.8l1.5,1.8v1.6l-3.2,0.3l-2.8-3.7l-1.6,1.1l-3.4,0.8l-2.3,1.9l-3.2-0.3l-1.3,4.2l-2.9-0.2L666,182l-2.6-1.5
 	l-6,0.5l-2.6,0.5l-4.7-0.6l-1.3-4.9l-1.8-1.5l-7.3-3.6l-3.7-1.1l-1,1l-2.1-3.2v-3.4l1.6-5l-2.1-2.1l-2.3-1l-1.5-2.1l-9.2-0.2l-3.9-1
 	l-6.3-2.3l-3.2-1.9l-2.9,0.3l-1-1.9l0.3-2.6l-1.8-3.9l-2.6-4.7l-1.1-6.2l4.5-2.8l5.8-3.1l7.6-2.3l9.6,0.8l7-0.2l1.6,1.5l2.6-1.1
 	l7.9,0.8l3.7,0.2l6,1.5l7.5-0.6l2.8-2.1l3.7-0.3l3.9,4.7l9.9,1.6l1.5,0.6l8.8,5l4.2,3.4l2.4,1.1L701.6,139.2L701.6,139.2z"/>
-            <path id="LU" class="country" d="M324.8,274l0.5,3.6l2.4,2.6l4.5,1.8v2.3l-1.5,1.5l-1,4.9l-2.1-1.1l-3.2,1h-2.3l-3.4-1.9l1.8-2.8
+                <path id="LU" class="country" d="M324.8,274l0.5,3.6l2.4,2.6l4.5,1.8v2.3l-1.5,1.5l-1,4.9l-2.1-1.1l-3.2,1h-2.3l-3.4-1.9l1.8-2.8
 	l-3.2-3.9l0.3-2.8l2.3-4.1l2.1-2.1L324.8,274z"/>
-            <path id="LV" class="country" d="M707.6,95l3.1,0.5l0.8,1.8l5.2,2.8l1.1,3.6l-1.3,2.6l-0.5,5l2.9-0.5l1.6,1l0.5,1.9l2.8,3.4l2.1,1.3
+                <path id="LV" class="country" d="M707.6,95l3.1,0.5l0.8,1.8l5.2,2.8l1.1,3.6l-1.3,2.6l-0.5,5l2.9-0.5l1.6,1l0.5,1.9l2.8,3.4l2.1,1.3
 	l3.1,6.8l-0.5,2.8l-2.1,0.3l-2.3,1.3l-4.1,3.9l-0.6,2.8l-5-0.2l-4.9-0.6l-1.8,0.5l-1.9,2.4l-4.2,1l-3.7-0.8l-2.4-1.1l-4.2-3.4
 	l-8.8-5l-1.5-0.6l-9.9-1.6l-3.9-4.7l-3.7,0.3l-2.8,2.1l-7.5,0.6l-6-1.5l-3.7-0.2l-7.9-0.8l-2.6,1.1l-1.6-1.5l-7,0.2l-9.6-0.8
 	l-7.6,2.3l-5.8,3.1l-4.5,2.8l-1.3-4.5l-1-8.9l0.2-4.5l3.1-2.6l1.3-1.9l1-7.3l4.1-5.8l3.9-0.6l5-1.6l5.7-1.5l2.3,3.1l7.9,4.9l1.9,1.6
 	l3.7,5.5l7.1,2.9l5-1l5.8-3.9l1.6-1.8v-1.8l-1.9-7.6l-1.8-3.2l0.2-2.1l13.6-4.5l2.4,1.6l1.8-1.1l9.1,4.1l3.7,0.8l1,1.1l5.7,4.4
 	l4.5,1.8L699,93l5.5,1.6L707.6,95L707.6,95z"/>
-            <path id="MD" class="country" d="M772.1,389.9l-3.2-3.7l1.5-1.1l-2.3-8.1l-0.2-4.2l1.5-7.8l-0.8-4.7l-2.3-3.7l-2.3-4.7l-4.9-3.4
+                <path id="MD" class="country" d="M772.1,389.9l-3.2-3.7l1.5-1.1l-2.3-8.1l-0.2-4.2l1.5-7.8l-0.8-4.7l-2.3-3.7l-2.3-4.7l-4.9-3.4
 	l-2.1-2.8l-3.4-2.9l-4.1-5.2l-2.4-2.1l-4.9-7.9l-4.1-4.9l-4.1-2.6h-3.4l0.3-1l3.7-2.3l1.1,0.3l6.5,0.2l1.9-1.6l1.3,0.5l2.6-1.6
 	l5.7,1.6l5.8,3.9l4.1,0.5l1,1.9l9.1,1l2.3,3.1l2.3,1.6l2.3-1.1l2.3,2.3l1,3.7l-1,5l1,1.9l3.7,1.9l4.7,3.2v3.9l1.5,3.1l3.2,2.1
 	l3.4,1.3l1.6,2.6l0.3,4.7l4.7,2.8l-1,1.1l-4.7,0.6l-1.9-2.1l-2.6,1l-3.4-1.3l-3.1-0.3L787,363l-4.1,2.6l0.8,3.4l1.6,2.8l-0.6,3.2
 	l-3.7,2.8v2.1l-4.1,4.7l0.8,2.3l-0.6,1.6l-3.2,0.3L772.1,389.9L772.1,389.9z"/>
-            <path id="MK" class="country" d="M662.6,468.7l5.3,5.2l5.5,2.9l2.8,5.3l1.5,1.6l-0.8,2.8v6.8l-3.2,0.5l-0.3,3.4l-4.7,1.6l-5.3-1
+                <path id="MK" class="country" d="M662.6,468.7l5.3,5.2l5.5,2.9l2.8,5.3l1.5,1.6l-0.8,2.8v6.8l-3.2,0.5l-0.3,3.4l-4.7,1.6l-5.3-1
 	l-4.9,0.6L657,499l-2.8,4.1l-3.9,2.1l-3.7-1l-1.5,1l-7.5,0.5l-2.1-1.8l-2.6,0.3l-2.1-3.9l-1.9-1.8l-1.9-3.6l-0.3-3.1l-1.1-3.2
 	l1.3-1.3l-0.5-3.4l0.8-4.2l2.8,0.5l0.8-1.3l0.3-4.2l5.5-2.4l1.6-0.2l2.6,1.9l2.4-3.1l3.4-0.6l3.6-0.5l3.2-1.5l3.1,0.5l3.7-1.3
 	L662.6,468.7L662.6,468.7z"/>
-            <path id="ME" class="country" d="M595.5,438.1l0.6,1.9l4.2,2.8l3.1,3.2l4.9,2.6l3.4,0.8l8.6,4.7l0.2,1.6l-2.6,0.6l-0.3,1.1l-3.2,0.6
+                <path id="ME" class="country" d="M595.5,438.1l0.6,1.9l4.2,2.8l3.1,3.2l4.9,2.6l3.4,0.8l8.6,4.7l0.2,1.6l-2.6,0.6l-0.3,1.1l-3.2,0.6
 	l1.5,2.4l-0.3,2.1l-5.5,1.9l-1.3-3.4l-1.8-0.5l-5.2,8.6l-1.3,0.5l-4.1-0.3l2.6,3.1l2.8,1.3l0.5,1v5l-3.4-1.9l-1.5-2.9l-5-4.7
 	l-5.7-3.2l0.2-1.6l-2.6,0.2l-1.9-3.1l1.8-1.6l0.2-1.3l-1.8-2.6l-1-4.9l0.8-1.1l2.8-0.3l-0.2-2.4l0.8-2.8l3.2-2.8l3.7-0.3l-2.3-3.6
 	L595.5,438.1L595.5,438.1z"/>
-            <path id="PL" class="country" d="M635,170.8l1-1l3.7,1.1l7.3,3.6l1.8,1.5l1.3,4.9l3.4,8.3l4.7,7.9l2.8,5.8l1.5,6.3l-1,2.6l-6.5,2.8
-	l-1.3,0.8l-3.2,4.4v1.9l5.3,2.1l2.9,1.6l1.3,1.6l-0.3,3.9l0.6,1.8l-1.3,2.4l0.2,2.1l1.6,2.6l1.9,2.9v2.1l4.4,4.5l3.1,4.5l2.3,1.6
-	l-1.9,2.1l2.9,4.2l0.2,2.1l-1.9,2.9l-4.9,0.8l-7.8,7.5l-3.9,4.4l-5.5,7.1l-1,1.6l2.4,6.2l-0.2,2.9l3.1,2.3l-0.6,1.5L648,300
-	l-1.5-0.3l-9.2-3.1l-1.3-2.3l-1.6-1.1l-5-1.6l-5.8-0.5l-5.2,0.3l-2.3,2.4l-2.9-0.2l-3.9-1.6l-4.9,0.2l-3.7,1.6l-1.8,3.4l-2.8-1
-	l-2.3,0.6l-1-4.4l-2.3-0.6l-4.9-4.9l-3.6,2.1l-1.6,2.8H577l-0.8-2.4l-2.1-0.3l-0.8-2.6l-4.5-3.6l-0.8-2.9l-4.4-1.3l-0.8,0.3
-	l-5.7-2.9l-2.9,1.6l-1.6-1l-4.4-3.7l2.3-0.8v-2.6l-5.8,1.1l-5.3-3.1l-3.6-1h-2.1l2.8,3.9l-5.7,4.1L529,274l-2.4-3.1l-3.2-2.9
-	l-2.6-1.5l2.6-1.9l1.1-1.8l-2.9-1.9l-5.2,1.1l-1.3-1.5l-4.4-1.8l-7.5-1.8l-1.6-1.8l-0.5-1.8l-5.3-1.3l0.2,3.1l-3.4,0.6l2.6-5.8
-	l0.6-3.7l-2.6-5.2l-3.6-1.5v-2.6l-3.1-5l1.3-1.8l1.1-4.2l-1.3-3.1l-3.2-3.7l1-4.2l-2.3-2.8l-5.3-3.4l-2.6-2.3l1.1-2.6l3.1-2.9
-	l0.5-4.4l-2.9-6.6l-1.1-4.2l4.5,1.5l1.1-0.8l-0.2-2.9l-6.6-1.1l-0.2-1.9l3.2,0.6l6.2-2.3l10.5-2.9l11.2-2.8l5.3-0.8l3.2-3.6l3.1-2.8
-	l6.2-1.1l2.1-1.3l4.5-1.9l10.7-1.9l8.9-0.6l8.8,3.7l-1.5,0.5l-4.9-1.9l3.6,5.7l1.8,1.9l3.2,1.5l2.8,0.5l7.9-0.8l3.6-1.8l0.8,0.2
-	l10.7,0.6l37.1,1.5L635,170.8L635,170.8z"/>
-            <path id="PT" class="country" d="M50.2,598.5l-1.9,0.3l-7.3,4.1h-2.1l-4.1-1.8l-7.3-0.6l-2.4-0.5l-2.9,1.1h-2.4l-1.8,1.6l-1.3-0.5
+
+                <path id="PT" class="country" d="M50.2,598.5l-1.9,0.3l-7.3,4.1h-2.1l-4.1-1.8l-7.3-0.6l-2.4-0.5l-2.9,1.1h-2.4l-1.8,1.6l-1.3-0.5
 	l1.6-3.4l2.6-6.6V588l0.6-3.6l-0.5-3.4l-1.1-2.3l1.8-5.7v-2.9l-1.5-3.7l4.5,0.5l-2.8-2.3h-2.4l-3.7,1.5l-2.4,0.2l0.2-2.3l-0.8-2.9
 	l3.2-1l2.6-2.8l-0.5-2.6l-1.9,1.8l-1,2.3l-4.5,1.1l-2.4-0.8v-3.1l1-2.8l0.6-3.7l1.3-3.6l-0.3-2.3l2.6-2.1l2.3-3.1l7-14.4l-1-1.6
 	l2.8-10.7l1.9-3.7l1-7l-0.3-3.2l-1.1-3.2l-1.1-7v-2.3l-1.5-2.9l0.2-1.6l2.3-2.8l1.9-1.8l3.1-1.5l6.6-1.6l1.6,2.9l-2.1,3.1l1.5,2.1
 	l4.9-1.8l4.7-0.2l3.6,1.3h2.3l4.1-1.5l1.3-2.3l2.4,0.8l8.4,0.2l1.1,1.8l0.2,5l3.1,0.3l3.1,1.5l0.5,1.8l-4.1,4.1l-3.4,1.8l-2.6,2.3
 	l-1.8,2.6l-3.2,2.6l1.3,3.2l0.6,5.7l-0.6,6.2l0.6,1.8l-4.4,3.4l-0.3,1.6l2.3,2.1v3.1l-2.8,5.7l-1.6,0.8h-7l-1.8,0.5l1.8,3.1l2.3,1.9
 	l0.5,3.1l2.6,5.2l2.8,0.6l0.8,1.3l-1,3.9l-5.2,4.9l-1.5,6.5l4.9,7l2.8-0.3l-1.1,3.9l-3.4,1l-5.7,7l-1.3,3.6L50.2,598.5L50.2,598.5z"
-            />
-            <path id="RO" x-on:mouseover="current = 'ro'" x-on:click="current = 'ro'" class="country" d="M772.1,389.9l2.4,2.6l2.9,1.5l6.5,1.5l1-1.9l1.5,0.5l2.6-0.8l3.6-2.1l3.6-0.3l3.6,1.1l3.1,2.9l-0.3,7
-	l-1.1,3.4l-10,2.1l0.6-1l-1.1-3.2l-1.6-1.6l-1.5,1.8l1,2.8l-1.1,2.3l-0.3,3.9l1,1.5l-2.6,3.2l-0.8,2.1l1.3,7.8l-0.6,6h-3.2l-4.2-0.8
-	l-3.6-1.1l-4.1-4.2l-2.8,0.8l-1.5-1l-5.2-0.6l-7.3-3.7l-4.7,0.6l-7.1,1.5l-5.2,1.9l-5.3,3.4l-1.9,2.6l-2.6,1.5l-3.7,1l-6.8-0.3
-	l-15.2-2.8l-4.1,0.8l-5.7-0.6l-8.6-1.6l-6.3-0.5l-6,1l-1.5-2.9l2.9-3.2l-7-4.1l-1.3-1.9l-2.6-1.5l-0.8-2.8l4.1-2.9l-4.9-2.6
-	l-2.8,0.8l-2.8,2.9l-2.1,0.3l-1.6-1.9l-2.4-1.1l-5.7-1.1l-2.4-1.9l-3.4-1l0.3-1l2.9-1.3l-3.7-1.8l2.4-3.2l-1.5-1.8l-4.2-1.3
-	l-6.2-3.1l-3.6-2.9l-0.6-6.6l-1.3,0.3l-2.9-3.2l-4.7-2.8l-2.8-3.2l5.2-1.5l2.3,0.8l4.1-3.2l4.2,0.5l2.1-1.5l2.4-7.6l3.4-2.4
-	l-0.3-2.1l2.6-4.4v-1.9l2.3-2.4l1.1-4.1l2.3-2.3l-0.2-2.8l1.9-1.6l3.1-3.9l7.5-1.8l3.6-3.7l3.4-1.5l1.5-1.9h1.1l4.4,2.4l4.4-0.2
-	l11.2,2.3l5.8-1.1l1.9,0.5l7,5.3l3.4-0.8l1.6-1.9l5.5-2.1l13.6-1.9l1.8-3.1l0.3-2.3l6-1.3h3.4l4.1,2.6l4.1,4.9l4.9,7.9l2.4,2.1
-	l4.1,5.2l3.4,2.9l2.1,2.8l4.9,3.4l2.3,4.7l2.3,3.7l0.8,4.7l-1.5,7.8l0.2,4.2l2.3,8.1l-1.5,1.1L772.1,389.9L772.1,389.9z"/>
-            <path id="SR" class="country" d="M610.4,373.6l2.8,3.2l4.7,2.8l2.9,3.2l1.3-0.3l0.6,6.6l3.6,2.9l6.2,3.1l4.2,1.3l1.5,1.8l-2.4,3.2
+                />
+
+                <path id="SR" class="country" d="M610.4,373.6l2.8,3.2l4.7,2.8l2.9,3.2l1.3-0.3l0.6,6.6l3.6,2.9l6.2,3.1l4.2,1.3l1.5,1.8l-2.4,3.2
 	l3.7,1.8l-2.9,1.3l-0.3,1l3.4,1l2.4,1.9l5.7,1.1l2.4,1.1l1.6,1.9l2.1-0.3l2.8-2.9l2.8-0.8l4.9,2.6l-4.1,2.9l0.8,2.8l2.6,1.5l1.3,1.9
 	l-1.5,1.1l-0.3,3.1l-3.4,1.6l-0.6,3.7l1,3.9l3.9,6.3l4.7,2.4l2.1,2.6l2.6,1.6l-0.5,2.3l-2.6,2.8l-1.8,2.6l-2.9,0.2l-1.8,1v5.3
 	l2.3,4.7l-1.8,2.8l-1.6,0.5l-2.3-1.1l-3.7,1.3l-3.1-0.5l-3.2,1.5l-3.6,0.5l-1-2.1l1.6-1.5l1.9-5.2l0.3-1.9l-7.6-1.9v-2.1l-3.6-1.9
@@ -619,17 +535,13 @@
 	l-4.2-2.8l-0.6-1.9l1.1-1.3l4.1,0.5l0.3-3.6l-5.2-6l0.8-1.3l5,0.2l0.5-1.3l-5.3-4.7l-3.9-1.9l-0.8-1.3l0.2-4.2l2.6-4.4l0.8-4.1
 	l-2.4-1.3l-4.5,1.1l1.6-2.6l-1.1-4.2l2.8-0.6l3.7-0.2l-1.5-2.4l-4.9-1.6l-1.9-1.6l0.6-3.2l-2.1-0.6l-0.3-2.6l-2.6-4.4l1.1-2.4
 	l3.4-2.1l2.6,0.8l3.6-1.6l2.4-2.6l1.6-0.5l4.7,0.6l1.8-0.3l4.5,0.5L610.4,373.6L610.4,373.6z"/>
-            <path id="SK" x-on:click="current = 'sk'" x-on:mouseover="current = 'sk'" class="country" d="M648,300l-2.4,4.9l-1.3,4.7l-2.6,2.8l0.2,4.1l-7,1.8l-1-0.3l-3.6-3.6l-2.3-1.5l-7.5,1.1l-4.1-1
-	l-4.4-0.2l-2.9,0.6l-2.6,5.7l-8.1,4.1l-5.7-2.3l-1.1,0.3l-1.6,2.4l-3.9,1l-7,0.6l-2.3,1.1l-0.6,1.6l0.8,2.1l-1,1.6l-11.3,0.6
-	l-7.6-0.2l-2.6-1.1l-6.8-4.4l-3.4-0.5l-3.7-4.7l-2.6-4.7l-0.2-1.3l1.5-3.9l1.8-4.5l2.3-1.9l5.8,0.8l2.8-0.3l2.4-1.1l3.4-3.1l2.6-1.3
-	l1.1-4.9l3.7-1.9l1-1.3l3.2-2.4l4.5-0.5l2.1,0.3l0.8,2.4h3.6l1.6-2.8l3.6-2.1l4.9,4.9l2.3,0.6l1,4.4l2.3-0.6l2.8,1l1.8-3.4l3.7-1.6
-	l4.9-0.2l3.9,1.6l2.9,0.2l2.3-2.4l5.2-0.3l5.8,0.5l5,1.6l1.6,1.1l1.3,2.3l9.2,3.1L648,300L648,300z"/>
-            <path id="SI" d="M535.2,363.8l-4.1-1l-1.5,1.3v2.8h-3.2l-1.1,1.6l-7.1,2.8l-0.6,2.3l1.5,1.5l0.3,3.6l-0.6,1.8l-3.4,1
+
+                <path id="SI" class="country" d="M535.2,363.8l-4.1-1l-1.5,1.3v2.8h-3.2l-1.1,1.6l-7.1,2.8l-0.6,2.3l1.5,1.5l0.3,3.6l-0.6,1.8l-3.4,1
 	l-3.4,1.6l1.6,1.8l-1.1,1.1l1.3,3.7l-1.9,0.6l-2.6-0.3l-3.2-1.1l-2.1,0.8l-2.4-1.1l-4.2-3.4l-1.9,3.6l-1,0.5l-5.8,0.2l-1.8-0.8
 	l-2.3,2.1l-5.3-1.3l-0.8-1l2.8-1.8l2.4-0.2l-0.3-2.1l-2.4-2.1l-3.1-1.8l0.6-3.2l-2.1-0.3l-0.5-1.6l2.6-3.4l-3.7-1.1l-1.1-2.3
 	l5.3-3.7l0.3-1.5l8.1,1.5l8.1,1.1l4.9-1.9l1.6-2.1l3.1-1.1l4.2-0.3l4.5,0.3l3.7-1.8l2.6-0.3l3.9,0.8l0.2-3.1l2.1-1.5l3.9,0.2
 	l2.3,5.3L535.2,363.8L535.2,363.8z"/>
-            <path id="UA" class="country" d="M845.5,371.1v1l-6.3-1.3l-1.5-1.5L845.5,371.1L845.5,371.1z M802.8,394.8l-3.1-2.9l-3.6-1.1l-3.6,0.3
+                <path id="UA" class="country" d="M845.5,371.1v1l-6.3-1.3l-1.5-1.5L845.5,371.1L845.5,371.1z M802.8,394.8l-3.1-2.9l-3.6-1.1l-3.6,0.3
 	l-3.6,2.1l-2.6,0.8l-1.5-0.5l-1,1.9l-6.5-1.5l-2.9-1.5l-2.4-2.6l1.8-1.1l3.2-0.3l0.6-1.6l-0.8-2.3l4.1-4.7v-2.1l3.7-2.8l0.6-3.2
 	l-1.6-2.8l-0.8-3.4l4.1-2.6l3.4,1.6l3.1,0.3l3.4,1.3l2.6-1l1.9,2.1l4.7-0.6l1-1.1l-4.7-2.8l-0.3-4.7l-1.6-2.6l-3.4-1.3l-3.2-2.1
 	l-1.5-3.1v-3.9l-4.7-3.2L784,340l-1-1.9l1-5l-1-3.7l-2.3-2.3l-2.3,1.1l-2.3-1.6l-2.3-3.1l-9.1-1l-1-1.9l-4.1-0.5l-5.8-3.9l-5.7-1.6
@@ -652,10 +564,10 @@
 	l-2.1-3.7l-3.1,1l-3.6-1.8l-1.5-1.3l-5,1.3l-2.9-0.2l-6.2,1.3l-3.1-1.3l-6.5-3.2l-4.2-0.5v-1.6l2.9-0.5l0.2-1.6l-6.2-1l-0.2-2.1
 	l3.2,0.8l5.2,0.3l4.7,0.8l3.4-2.9l-3.9,0.8l-4.7-0.8l-3.4-2.9l-3.6,1.9l-5.2-0.8l-3.9,1.3l-3.7-0.3l-6.6,1.8l-0.6,4.7l-3.2,6.5l-5,6
 	l-7.5,3.4l-2.8-0.6l-1.5,1.8l0.3,2.1l1.6,1.5l1.8,5L802.8,394.8L802.8,394.8z"/>
-            <path id="XK" class="country" d="M646.7,470.3l-3.4,0.6l-2.4,3.1l-2.6-1.9l-1.6,0.2l-5.5,2.4l-0.3,4.2l-0.8,1.3l-2.8-0.5l-0.2-3.6
+                <path id="XK" class="country" d="M646.7,470.3l-3.4,0.6l-2.4,3.1l-2.6-1.9l-1.6,0.2l-5.5,2.4l-0.3,4.2l-0.8,1.3l-2.8-0.5l-0.2-3.6
 	l-2.3-5.2l-3.1-2.1l-2.3-0.8l-3.2-4.7l-0.8-0.6l0.3-2.1l-1.5-2.4l3.2-0.6l0.3-1.1l2.6-0.6l2.4-0.8v-2.3l2.8-2.1l0.6-1.6l-1-2.6
 	l2.8-1.5l1.8,2.1l4.5,2.1l3.7,3.4l0.3,1.1l3.6,1.9v2.1l7.6,1.9l-0.3,1.9l-1.9,5.2l-1.6,1.5L646.7,470.3L646.7,470.3z"/>
-            <path id="NL" class="country" d="M287.2,242.9l-1,1.9l-5.2,2.4l-6.3-1.8l-1.9,1l-1.9-1.1l-0.5-2.1l4.5-0.6l5.7,1.1l2.4-1l1.9,0.8
+                <path id="NL" class="country" d="M287.2,242.9l-1,1.9l-5.2,2.4l-6.3-1.8l-1.9,1l-1.9-1.1l-0.5-2.1l4.5-0.6l5.7,1.1l2.4-1l1.9,0.8
 	L287.2,242.9L287.2,242.9z M281.7,234.3l2.4,2.3l-2.4,0.5l-2.6-1.6L281.7,234.3L281.7,234.3z M311,220.6l-4.9-0.6l-1.5-1.1l3.9-2.8
 	l5.2-2.4l2.8,0.6l0.8,1.5l-1.8,1.8L311,220.6L311,220.6z M298.7,201.9l-1.8,1.8l-1-2.3l2.8-2.3V201.9L298.7,201.9z M287.2,242.9
 	l-4.2-1.3l-3.6,0.8l-4.5-1.1l-2.8-2.1l1.9-1.1l3.7-0.2l6.5,1.1l1.9-1.5l-1-1.6l-3.7-3.4l2.6-4.4l2.3-1.6l5.2-6.2l1.5-3.2l1.9-8.9
@@ -665,7 +577,7 @@
 	l-0.8-2.6l-4.1,1.3l-1.8-2.1l-2.4,1.6l-2.4-1.3l-2.3,1.1l0.3,1.5L287.2,242.9L287.2,242.9z M316.5,217.6l1.5-1.5l-0.8-3.1l-3.4-0.5
 	l-0.8-1.3l0.6-4.1l-4.5-0.6l-0.6-4.1l-2.4,0.5l-3.7,2.4l1,2.1l2.6,2.6v1.5l-3.4,1.1l0.2,4.2l-0.3,2.6l8.8,2.3L316.5,217.6
 	L316.5,217.6z"/>
-            <path id="ES" class="country" d="M235.7,554.4l-0.6,1.6l-3.2-0.6V553l1.9-2.6l4.4-1.1l1.3,2.1L235.7,554.4L235.7,554.4z M270.8,532.4
+                <path id="ES" class="country" d="M235.7,554.4l-0.6,1.6l-3.2-0.6V553l1.9-2.6l4.4-1.1l1.3,2.1L235.7,554.4L235.7,554.4z M270.8,532.4
 	l1.9,0.8l2.1-0.8l2.3,0.6l0.3,1.6l-3.6,5.7l-1,2.3l-3.4,2.1L263,542l-0.5-2.6l-2.3-1.1l-2.8,2.1l-2.3-1.6l-0.5-1.9l8.6-6l2.4-1.5
 	l5.2-1.5l0.8,1.9L270.8,532.4L270.8,532.4z M294.7,531.1l-0.5,0.3l-6.3-3.1l-2.6-0.6l0.2-2.3l4.2-0.3l3.4,1.1l1.9,2.9L294.7,531.1
 	L294.7,531.1z M169.2,441.1l0.8,2.1l7,2.1l-0.5,5.2l2.9-0.6l7.1,2.8l3.6,0.3l3.6,3.4l5.8-0.6l5.2,3.4l5-0.6l1.1,0.6h7.6l1.3-3.9
@@ -682,7 +594,7 @@
 	l2.3-3.6l-2.3-0.3l-3.7-4.1l1.3-5l3.2-1.6l3.1-2.4l4.2,0.5l2.8-0.5l5.8-2.6l-0.6-2.4l0.6-1.1l5.2-2.8l3.2-0.3l3.1-1.5l2.1,0.8
 	l1.8-0.2l2.1,1l2.8,2.6l4.1,1l3.2-0.8l5.8-0.2l2.8,0.3l5.2-0.5l2.9,0.2l4.7-1.3l3.7,1.6l7.1,0.6l4.2,1.3l11.7,2.3h4.4l6-1.3l2.6-0.8
 	l2.4,0.5l3.4-1l3.7,1.6l7.6,2.1l3.4-2.1l5.5,1l5.3,2.1l2.9,0.2l4.2-0.5L169.2,441.1L169.2,441.1z"/>
-            <path id="FR" class="country" d="M399,456.2l-0.5,3.7l1.6,2.8l1,10.5l-2.9,5.2l0.2,4.9l-2.6,7l-1.3,1.8l-6.2-3.2l-1.9-1.8l1.6-2.9
+                <path id="FR" class="country" d="M399,456.2l-0.5,3.7l1.6,2.8l1,10.5l-2.9,5.2l0.2,4.9l-2.6,7l-1.3,1.8l-6.2-3.2l-1.9-1.8l1.6-2.9
 	l-3.6-1.5l0.6-2.8l-0.3-1.5l-2.6-0.8l1.6-2.1v-1.3l-2.4-1.6l-0.5-1.5l2.1-1.8l-1-1.5l0.2-2.1l1.5-3.1l1.9-1.5l4.5-1.3l1.9-1.8l3.1,1
 	l1-1.9l-0.3-4.4l0.5-1.8l2.1,0.8L399,456.2L399,456.2z M182,378.6l-0.6,2.3l-3.1-3.9l1.6-0.8L182,378.6z M318.8,288.5l3.4,1.9h2.3
 	l3.2-1l2.1,1.1l2.3,0.2l5.7,7l2.9-1.1l2.3,0.6l0.5,1.5l3.4,0.2l4.9-1l3.2,2.3l7.8,1.3l2.6,1l0.2,2.1l-5.7,6.2l-2.3,8.9l-1.6,2.9
@@ -703,7 +615,7 @@
 	l1.9-2.9l0.8-2.1l0.5-11l1.6-3.6l4.7-2.6l10.4-1.8l1.5-0.8l1.5,3.6v1.9l4.7,3.9l5.2-1.6l2.6,2.9l0.8,3.2l6.8,1.8l1,3.2l1.5-0.5
 	l5.8,0.6l2.6,1.8l-0.6,2.6l1.1,1.1l-1.1,2.3l0.8,1l3.7,0.5l3.6-0.5l2.1-1l0.8-2.3l3.1-1l-1.3,4.4l1,1l0.6,3.2l2.8,0.2l5.3,2.4
 	l4.5,4.2L318.8,288.5L318.8,288.5z"/>
-            <path id="PT_00000182496881052043866180000006884185237426755517_" class="country" d="M50.2,598.5l-1.9,0.3l-7.3,4.1h-2.1l-4.1-1.8
+                <path id="PT_00000182496881052043866180000006884185237426755517_" class="country" d="M50.2,598.5l-1.9,0.3l-7.3,4.1h-2.1l-4.1-1.8
 	l-7.3-0.6l-2.4-0.5l-2.9,1.1h-2.4l-1.8,1.6l-1.3-0.5l1.6-3.4l2.6-6.6V588l0.6-3.6l-0.5-3.4l-1.1-2.3l1.8-5.7v-2.9l-1.5-3.7l4.5,0.5
 	l-2.8-2.3h-2.4l-3.7,1.5l-2.4,0.2l0.2-2.3l-0.8-2.9l3.2-1l2.6-2.8l-0.5-2.6l-1.9,1.8l-1,2.3l-4.5,1.1l-2.4-0.8v-3.1l1-2.8l0.6-3.7
 	l1.3-3.6l-0.3-2.3l2.6-2.1l2.3-3.1l7-14.4l-1-1.6l2.8-10.7l1.9-3.7l1-7l-0.3-3.2l-1.1-3.2l-1.1-7v-2.3l-1.5-2.9l0.2-1.6l2.3-2.8
@@ -711,10 +623,108 @@
 	l3.1,0.3l3.1,1.5l0.5,1.8l-4.1,4.1l-3.4,1.8l-2.6,2.3l-1.8,2.6l-3.2,2.6l1.3,3.2l0.6,5.7l-0.6,6.2l0.6,1.8l-4.4,3.4l-0.3,1.6
 	l2.3,2.1v3.1l-2.8,5.7l-1.6,0.8h-7l-1.8,0.5l1.8,3.1l2.3,1.9l0.5,3.1l2.6,5.2l2.8,0.6l0.8,1.3l-1,3.9l-5.2,4.9l-1.5,6.5l4.9,7
 	l2.8-0.3l-1.1,3.9l-3.4,1l-5.7,7l-1.3,3.6L50.2,598.5L50.2,598.5z"/>
-            <rect id="_x30_" x="202.4" y="240.2" class="st0" width="0" height="0"/>
-            <rect id="_x31_" x="486.9" y="274.5" class="st0" width="0" height="0"/>
-            <rect id="_x32_" x="398.7" y="38.9" class="st0" width="0" height="0"/>
 
+
+                <path id="PL"
+                      class="country"
+                      d="M635,170.8l1-1l3.7,1.1l7.3,3.6l1.8,1.5l1.3,4.9l3.4,8.3l4.7,7.9l2.8,5.8l1.5,6.3l-1,2.6l-6.5,2.8
+	l-1.3,0.8l-3.2,4.4v1.9l5.3,2.1l2.9,1.6l1.3,1.6l-0.3,3.9l0.6,1.8l-1.3,2.4l0.2,2.1l1.6,2.6l1.9,2.9v2.1l4.4,4.5l3.1,4.5l2.3,1.6
+	l-1.9,2.1l2.9,4.2l0.2,2.1l-1.9,2.9l-4.9,0.8l-7.8,7.5l-3.9,4.4l-5.5,7.1l-1,1.6l2.4,6.2l-0.2,2.9l3.1,2.3l-0.6,1.5L648,300
+	l-1.5-0.3l-9.2-3.1l-1.3-2.3l-1.6-1.1l-5-1.6l-5.8-0.5l-5.2,0.3l-2.3,2.4l-2.9-0.2l-3.9-1.6l-4.9,0.2l-3.7,1.6l-1.8,3.4l-2.8-1
+	l-2.3,0.6l-1-4.4l-2.3-0.6l-4.9-4.9l-3.6,2.1l-1.6,2.8H577l-0.8-2.4l-2.1-0.3l-0.8-2.6l-4.5-3.6l-0.8-2.9l-4.4-1.3l-0.8,0.3
+	l-5.7-2.9l-2.9,1.6l-1.6-1l-4.4-3.7l2.3-0.8v-2.6l-5.8,1.1l-5.3-3.1l-3.6-1h-2.1l2.8,3.9l-5.7,4.1L529,274l-2.4-3.1l-3.2-2.9
+	l-2.6-1.5l2.6-1.9l1.1-1.8l-2.9-1.9l-5.2,1.1l-1.3-1.5l-4.4-1.8l-7.5-1.8l-1.6-1.8l-0.5-1.8l-5.3-1.3l0.2,3.1l-3.4,0.6l2.6-5.8
+	l0.6-3.7l-2.6-5.2l-3.6-1.5v-2.6l-3.1-5l1.3-1.8l1.1-4.2l-1.3-3.1l-3.2-3.7l1-4.2l-2.3-2.8l-5.3-3.4l-2.6-2.3l1.1-2.6l3.1-2.9
+	l0.5-4.4l-2.9-6.6l-1.1-4.2l4.5,1.5l1.1-0.8l-0.2-2.9l-6.6-1.1l-0.2-1.9l3.2,0.6l6.2-2.3l10.5-2.9l11.2-2.8l5.3-0.8l3.2-3.6l3.1-2.8
+	l6.2-1.1l2.1-1.3l4.5-1.9l10.7-1.9l8.9-0.6l8.8,3.7l-1.5,0.5l-4.9-1.9l3.6,5.7l1.8,1.9l3.2,1.5l2.8,0.5l7.9-0.8l3.6-1.8l0.8,0.2
+	l10.7,0.6l37.1,1.5L635,170.8L635,170.8z"/>
+
+
+                <path id="CZ"
+                      x-on:click="current = 'cz'"
+                      x-on:mouseover="current ='cz'"
+                      class="country"
+                      :class="current == 'cz' ? 'current order-last' : ''"
+                      d="M492.5,255.9l3.4-0.6l-0.2-3.1l5.3,1.3l0.5,1.8l1.6,1.8l7.5,1.8l4.4,1.8l1.3,1.5l5.2-1.1l2.9,1.9
+	l-1.1,1.8l-2.6,1.9l2.6,1.5l3.2,2.9l2.4,3.1l1.6,0.6l5.7-4.1l-2.8-3.9h2.1l3.6,1l5.3,3.1l5.8-1.1v2.6l-2.3,0.8l4.4,3.7l1.6,1
+	l2.9-1.6l5.7,2.9l0.8-0.3l4.4,1.3l0.8,2.9l4.5,3.6l0.8,2.6l-4.5,0.5l-3.2,2.4l-1,1.3l-3.7,1.9l-1.1,4.9l-2.6,1.3l-3.4,3.1l-2.4,1.1
+	l-2.8,0.3l-5.8-0.8l-2.3,1.9l-1.8,4.5l-1.6-2.6l-8.3-2.4l-1.9,1.5l-6.2-0.3l-4.9-2.8l-2.4,0.2l-7.8-2.8l-2.3,0.6l-2.6-1.3l-1.9,0.3
+	l-0.5,5.2h-1.9l-2.1,2.6l-0.2,1.8l-4.1-0.6l-2.3,1.1l-6.3-0.6l-1.3-2.1l-3.6-1.9l-1-1.1l-4.7-3.6h-2.1l-2.1-2.6l-4.1-2.4l-4.7-4.2
+	h-2.1l-3.7-3.2l-2.9-4.4l-2.3-2.4l1.9-2.8l-1-2.6l-3.7-2.1l-4.1-5.5l0.8-1.1l3.1,3.2l3.1-4.2l1.8-1l4.2-1l3.4,0.6l1.3-2.1l3.2-0.5
+	l1-1.6l2.6-1.1l1.8,0.2l1-1.9l7.1-1.6l5.7-2.4l3.1-1l-2.4-2.4l1.3-1l3.6,0.6l2.4,2.4v1.5l2.3,1L492.5,255.9L492.5,255.9z"/>
+
+                <path id="SK"
+                      x-on:click="current = 'sk'"
+                      x-on:mouseover="current = 'sk'"
+                      class="country"
+                      :class="current == 'sk' ? 'current order-last' : ''"
+                      d="M648,300l-2.4,4.9l-1.3,4.7l-2.6,2.8l0.2,4.1l-7,1.8l-1-0.3l-3.6-3.6l-2.3-1.5l-7.5,1.1l-4.1-1
+	l-4.4-0.2l-2.9,0.6l-2.6,5.7l-8.1,4.1l-5.7-2.3l-1.1,0.3l-1.6,2.4l-3.9,1l-7,0.6l-2.3,1.1l-0.6,1.6l0.8,2.1l-1,1.6l-11.3,0.6
+	l-7.6-0.2l-2.6-1.1l-6.8-4.4l-3.4-0.5l-3.7-4.7l-2.6-4.7l-0.2-1.3l1.5-3.9l1.8-4.5l2.3-1.9l5.8,0.8l2.8-0.3l2.4-1.1l3.4-3.1l2.6-1.3
+	l1.1-4.9l3.7-1.9l1-1.3l3.2-2.4l4.5-0.5l2.1,0.3l0.8,2.4h3.6l1.6-2.8l3.6-2.1l4.9,4.9l2.3,0.6l1,4.4l2.3-0.6l2.8,1l1.8-3.4l3.7-1.6
+	l4.9-0.2l3.9,1.6l2.9,0.2l2.3-2.4l5.2-0.3l5.8,0.5l5,1.6l1.6,1.1l1.3,2.3l9.2,3.1L648,300L648,300z"/>
+
+                <path id="HU"
+                      x-on:click="current = 'hu'"
+                      x-on:mouseover="current = 'hu'"
+                      class="country"
+                      :class="current == 'hu' ? 'current order-last' : ''"
+                      d="M641.8,316.3h2.4l2.3,3.7l3.6,1.3l1.5,1.8l3.7,0.6l1.5,1.1l1.1,2.8l-3.6,3.7l-7.5,1.8l-3.1,3.9
+	l-1.9,1.6l0.2,2.8l-2.3,2.3l-1.1,4.1l-2.3,2.4v1.9l-2.6,4.4l0.3,2.1l-3.4,2.4l-2.4,7.6l-2.1,1.5l-4.2-0.5l-4.1,3.2l-2.3-0.8
+	l-5.2,1.5l-1.6-0.8l-4.5-0.5l-1.8,0.3l-4.7-0.6l-1.6,0.5l-2.4,2.6l-3.6,1.6l-2.6-0.8l-3.4,2.1l-4.7,0.6l-1.8,2.3l-4.1,1.5l-7.9-0.3
+	l-5.3-1.5l-2.1-2.1l-4.1-1l-2.1-1.1l-3.6-3.6l-4.4-2.9l-1.5-2.1l-2.8-1.9l-4.7-1.9l-3.1-3.6l-2.3-5.3l-3.9-0.2l2.9-2.8l4.1-0.8
+	l0.5-2.9l-1.8-2.6l0.8-1.1l-0.6-2.4l3.6-1.9l0.8-2.3l-0.8-1.8l-4.2-1.1l2.1-2.3l4.1,1.5l6.3-0.5l-1.1-3.2l1-3.1l1-1.1l3.4,0.5
+	l6.8,4.4l2.6,1.1l7.6,0.2l11.3-0.6l1-1.6l-0.8-2.1l0.6-1.6l2.3-1.1l7-0.6l3.9-1l1.6-2.4l1.1-0.3l5.7,2.3l8.1-4.1l2.6-5.7l2.9-0.6
+	l4.4,0.2l4.1,1l7.5-1.1l2.3,1.5l3.6,3.6l1,0.3L641.8,316.3L641.8,316.3z"/>
+
+
+
+                <path x-on:click="current = 'at'"
+                      x-on:mouseover="current = 'at'"
+                      id="AT"
+                      x-ref="at"
+                      class="country order-last"
+                      :class="current == 'at' ? 'current order-last' : ''"
+                      d="M539.4,311.6l-1.5,3.9l0.2,1.3l2.6,4.7l3.7,4.7l-1,1.1l-1,3.1l1.1,3.2l-6.3,0.5l-4.1-1.5l-2.1,2.3
+	l4.2,1.1l0.8,1.8l-0.8,2.3l-3.6,1.9l0.6,2.4l-0.8,1.1l1.8,2.6l-0.5,2.9l-4.1,0.8l-2.9,2.8l-2.1,1.5l-0.2,3.1l-3.9-0.8l-2.6,0.3
+	l-3.7,1.8l-4.5-0.3l-4.2,0.3l-3.1,1.1l-1.6,2.1l-4.9,1.9l-8.1-1.1l-8.1-1.5l-4.2-0.8l-6.5-0.5l-13.9-2.4l-1.8-0.8l-5-5.7v-3.7
+	l-7.6,2.4l-5-0.3l-5.5,0.5l-2.3,1l-1.9,3.6l-1.8,0.6l-3.4-0.6l-1.5-1.3l-4.9-0.5l-0.8-2.4l-1.3-0.5l-3.2,3.1l-3.7-0.6l-2.4-1.3
+	l-0.6-1.6l-5.3-1.3l0.5-1.3l-1.8-4.1l1.6-4.9l-1.5-1.1l2.8-0.8l1.1-0.8l5.7,2.6l1.5,2.3l1.9,0.5l-0.2,2.1l2.6-0.8l1.6-2.6l0.3-3.1
+	l4.5-0.2l4.4,0.6l2.3,3.1l6.2-0.8l1.8-1.5l6.3-2.4l9.2-0.8l0.2-2.3l3.2,0.5l2.4,1.3l4.1-0.8l1.8,0.8l0.3,1.8l1.9,1.5l2.8,0.6
+	l0.5-2.4l-0.5-3.1l-2.8-0.5l1-2.1l-0.2-2.1l-4.1-4.5l1-2.1l5-2.9l4.7-1.3l1.6-1.6l1.1-4.7l3.7,1.5l2.1-1.5l0.3-4.5l3.6,1.9l1.3,2.1
+	l6.3,0.6l2.3-1.1l4.1,0.6l0.2-1.8l2.1-2.6h1.9l0.5-5.2l1.9-0.3l2.6,1.3l2.3-0.6l7.8,2.8l2.4-0.2l4.9,2.8l6.2,0.3l1.9-1.5l8.3,2.4
+	L539.4,311.6L539.4,311.6z"/>
+
+
+                <path id="RO"
+                      x-on:mouseover="current = 'ro'"
+                      x-on:click="current = 'ro'"
+                      class="country"
+                      :class="current == 'ro' ? 'current order-last' : ''"
+                      d="M772.1,389.9l2.4,2.6l2.9,1.5l6.5,1.5l1-1.9l1.5,0.5l2.6-0.8l3.6-2.1l3.6-0.3l3.6,1.1l3.1,2.9l-0.3,7
+	l-1.1,3.4l-10,2.1l0.6-1l-1.1-3.2l-1.6-1.6l-1.5,1.8l1,2.8l-1.1,2.3l-0.3,3.9l1,1.5l-2.6,3.2l-0.8,2.1l1.3,7.8l-0.6,6h-3.2l-4.2-0.8
+	l-3.6-1.1l-4.1-4.2l-2.8,0.8l-1.5-1l-5.2-0.6l-7.3-3.7l-4.7,0.6l-7.1,1.5l-5.2,1.9l-5.3,3.4l-1.9,2.6l-2.6,1.5l-3.7,1l-6.8-0.3
+	l-15.2-2.8l-4.1,0.8l-5.7-0.6l-8.6-1.6l-6.3-0.5l-6,1l-1.5-2.9l2.9-3.2l-7-4.1l-1.3-1.9l-2.6-1.5l-0.8-2.8l4.1-2.9l-4.9-2.6
+	l-2.8,0.8l-2.8,2.9l-2.1,0.3l-1.6-1.9l-2.4-1.1l-5.7-1.1l-2.4-1.9l-3.4-1l0.3-1l2.9-1.3l-3.7-1.8l2.4-3.2l-1.5-1.8l-4.2-1.3
+	l-6.2-3.1l-3.6-2.9l-0.6-6.6l-1.3,0.3l-2.9-3.2l-4.7-2.8l-2.8-3.2l5.2-1.5l2.3,0.8l4.1-3.2l4.2,0.5l2.1-1.5l2.4-7.6l3.4-2.4
+	l-0.3-2.1l2.6-4.4v-1.9l2.3-2.4l1.1-4.1l2.3-2.3l-0.2-2.8l1.9-1.6l3.1-3.9l7.5-1.8l3.6-3.7l3.4-1.5l1.5-1.9h1.1l4.4,2.4l4.4-0.2
+	l11.2,2.3l5.8-1.1l1.9,0.5l7,5.3l3.4-0.8l1.6-1.9l5.5-2.1l13.6-1.9l1.8-3.1l0.3-2.3l6-1.3h3.4l4.1,2.6l4.1,4.9l4.9,7.9l2.4,2.1
+	l4.1,5.2l3.4,2.9l2.1,2.8l4.9,3.4l2.3,4.7l2.3,3.7l0.8,4.7l-1.5,7.8l0.2,4.2l2.3,8.1l-1.5,1.1L772.1,389.9L772.1,389.9z"/>
+
+                <path id="BG"
+                      x-on:mouseover="current = 'bg'"
+                      x-on:click="current = 'bg'"
+                      class="country"
+                      :class="current == 'bg' ? 'current order-last' : ''"
+                      d="M785.4,432.7l0.3,6l-1.5,2.9l-3.2-1l-3.6,0.8l-1.6,3.2l-1.9,1.9v4.2l0.6,6.8l-2.6,1.1l-4.7,6l4.9,2.9
+	l2.8,3.6l3.9,4.1l0.8,1.9l-2.8-0.3l-1.5,0.6h-2.9l-2.4,1l-5.5-4.1l-5.7,0.5l-2.4,1.8l-5.5,0.6l-1.6,3.6l-3.1,0.5l-0.5,2.3l-2.6-0.8
+	l-2.6,1.8l1.1,1.6l1.5,4.4l-0.3,1.3l-4.1,1.9l-2.9-0.5l-5.2,0.6l-5.5,1.5l-2.8-1.8l-6-1.9l-1.5,1l-3.9-2.3l-1.9-2.8l-2.6,0.8
+	l-6.8-0.2l-0.3,1.5l-3.1,0.3l-4.9,1.8l-4.2-0.3l-3.9,0.3l-1.6,1.6l-4.9-0.3v-6.8l0.8-2.8l-1.5-1.6l-2.8-5.3l-5.5-2.9l-5.3-5.2
+	l1.6-0.5l1.8-2.8l-2.3-4.7v-5.3l1.8-1l2.9-0.2l1.8-2.6l2.6-2.8l0.5-2.3l-2.6-1.6l-2.1-2.6l-4.7-2.4l-3.9-6.3l-1-3.9l0.6-3.7l3.4-1.6
+	l0.3-3.1l1.5-1.1l7,4.1l-2.9,3.2l1.5,2.9l6-1l6.3,0.5l8.6,1.6l5.7,0.6l4.1-0.8l15.2,2.8l6.8,0.3l3.7-1l2.6-1.5l1.9-2.6l5.3-3.4
+	l5.2-1.9l7.1-1.5l4.7-0.6l7.3,3.7l5.2,0.6l1.5,1l2.8-0.8l4.1,4.2l3.6,1.1l4.2,0.8L785.4,432.7L785.4,432.7z"/>
+
+            </g>
             <g x-cloak x-transition x-show="current == 'at'">
                 <g>
                     <g>
