@@ -3,7 +3,7 @@
         <div class="swiper" x-on:mouseenter="pause" x-on:mouseover="pause" x-on:mouseleave="play">
             <div class="swiper-wrapper">
                 @foreach($slides as $index =>  $slide)
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" x-show="showSlides" x-cloak>
                         <div class="relative flex justify-center items-center aspect-[2/3] md:aspect-video overflow-hidden w-full bg-gray-50 clip-slide-vertical -mt-1 -mb-[10px]">
                             <img src="{{ $slide->getFirstMediaUrl() }}" class="min-h-full w-full object-cover brightness-50" alt="{{ $slide->title }}"/>
                             <div class="absolute inset-0 flex items-center pl-12 sm:pl-24">
@@ -72,6 +72,7 @@
             lang: '{{ app()->getLocale() }}',
             swiper: null,
             slides: slides,
+            showSlides: false,
             currentSlide: 0,
             rest: 0,
             circumference: 30 * 2 * Math.PI,
@@ -83,6 +84,7 @@
                     on: {
                         init: () => {
                             this.startAutoplay();
+                            this.showSlides = true;
                         },
                         activeIndexChange: () => {
                             this.currentSlide = Alpine.raw(this.swiper).activeIndex;

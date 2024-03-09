@@ -3,8 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>First Facility - always first</title>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireScripts
@@ -39,7 +43,7 @@
 
 <x-FrontpageSections.yellow-skeleton preheading="360° realty care" heading="Our Service in three Departments">
     @foreach(\App\Models\ServiceCategory::orderBy('order_on_frontpage')->get() as $index => $service)
-        <div class="grid lg:grid-cols-2 lg:gap-10 py-24 lg:py-36 pr-4 lg:pr-0">
+        <div data-aos="fade-up" class="grid lg:grid-cols-2 lg:gap-10 py-24 lg:py-36 pr-4 lg:pr-0">
             <div @class([ 'mb-5 lg:mb-0','lg:order-last' => $index % 2 == 0 ])>
                 <img src="{{ $service->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
             </div>
