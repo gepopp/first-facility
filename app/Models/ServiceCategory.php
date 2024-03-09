@@ -12,9 +12,10 @@ class ServiceCategory extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia, HasTranslations;
 
-    public array $translatable = ['name', 'description'];
+    public array $translatable = [ 'name', 'description' ];
 
     protected $casts = [
-        'order_on_frontpage' => 'integer'
+        'order_on_frontpage' => 'integer',
+        'countries'          => 'array',
     ];
 }
