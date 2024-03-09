@@ -5,6 +5,10 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
+    safelist:[
+        'border-r-2',
+        'border-r-4'
+    ],
     theme: {
         container: {
             center: true,
