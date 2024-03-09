@@ -70,9 +70,9 @@ class ServiceCategoryResource extends Resource
     {
         return $table
             ->columns( [
-                Tables\Columns\TextColumn::make( 'order_on_frontpage' )
-                                         ->numeric()
+                Tables\Columns\TextInputColumn::make( 'order_on_frontpage' )
                                          ->sortable(),
+                Tables\Columns\TextColumn::make('name'),
                 Tables\Columns\TextColumn::make( 'created_at' )
                                          ->dateTime()
                                          ->sortable()
