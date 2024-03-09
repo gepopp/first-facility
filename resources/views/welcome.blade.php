@@ -12,7 +12,7 @@
 </head>
 <body class="antialiased text-logo-dark-blue">
 
-    <livewire:frontpage.hero-slide/>
+<livewire:frontpage.hero-slide/>
 
 @php
     $infoblock = \App\Models\FrontpageIntrotextBlock::first();
@@ -35,16 +35,29 @@
             @endif
         </div>
     </div>
-
 </x-FrontpageSections.blue-sceleton>
 
+<x-FrontpageSections.yellow-skeleton preheading="360° realty care" heading="Our Service in three Departments">
 
+    <div class="grid md:grid-cols-2 md:gap-10">
+        <div>
+
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+
+</x-FrontpageSections.yellow-skeleton>
 
 <div class="py-64 bg-logo-light-blue/10">
     <div class="container">
         <livewire:intercative-map/>
     </div>
 </div>
+
+
 <div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% min-h-screen py-64">
     <div class="container bg-center bg-opacity-75 relative">
         <div class="flex w-full justify-between">

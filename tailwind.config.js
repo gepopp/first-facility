@@ -7,7 +7,10 @@ export default {
     ],
     safelist:[
         'border-r-2',
-        'border-r-4'
+        'border-r-4',
+        'bg-logo-blue/75',
+        'bg-logo-blue',
+        'text-logo-blue'
     ],
     theme: {
         container: {
