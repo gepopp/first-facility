@@ -81,9 +81,20 @@
                             .flip:hover {
                                 transform: translate3d(0px, 0px, -250px);
                             }
+                            .flip.active {
+                                transform: translate3d(0px, 0px, -250px);
+                            }
                         </style>
-                        <div class="grid grid-cols-3 gap-8">
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                        <div class="grid grid-cols-3 gap-8" x-data="{ active: 0 }"
+                        x-init=" setInterval(() => {
+                            if(active == 9){
+                                active = 0;
+                            }else{
+                                active++;
+                            }
+                        }, 2000) ">
+                            <div class="flip w-full aspect-square  rounded-lg border border-white p-2 relative"
+                            :class="active == 0 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -91,7 +102,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 1 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -99,7 +111,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 2 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -107,7 +120,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 3 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -115,7 +129,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 4 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -123,7 +138,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 5 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -131,7 +147,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 6 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -139,7 +156,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 7 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
@@ -147,7 +165,8 @@
                                     <img src="{{ asset('flag-icons/aut-round.svg') }}"/>
                                 </div>
                             </div>
-                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative">
+                            <div class="flip  w-full aspect-square  rounded-lg border border-white p-2 relative"
+                                 :class="active == 8 ? 'active' : ''">
                                 <div class="clip-path-left bg-white/25 backdrop-blur-sm p-2">
                                     <img src="{{ asset('map/outline-at.svg') }}"/>
                                 </div>
