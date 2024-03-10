@@ -60,11 +60,9 @@
     @endforeach
 </x-FrontpageSections.yellow-skeleton>
 
-<div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% overflow-hidden">
-    <div class="container py-64">
+<x-FrontpageSections.blue-full-sceleton preheading="9 Countries" heading="One Team of Experts">
         <livewire:intercative-map/>
-    </div>
-</div>
+</x-FrontpageSections.blue-full-sceleton>
 
 
 <div class="bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90% min-h-screen py-64">
