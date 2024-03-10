@@ -87,7 +87,7 @@
                         </style>
                         <div class="grid grid-cols-3 gap-8" x-data="{ active: 0 }"
                         x-init=" setInterval(() => {
-                            if(active == 9){
+                            if(active == 8){
                                 active = 0;
                             }else{
                                 active++;
