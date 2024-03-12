@@ -41,7 +41,7 @@
     </div>
 </x-FrontpageSections.blue-sceleton>
 
-<x-FrontpageSections.yellow-skeleton preheading="360° realty care" heading="Our Service in three Departments">
+<x-FrontpageSections.yellow-skeleton preheading="Services" heading="Wide Range Of Services">
     @foreach(\App\Models\ServiceCategory::orderBy('order_on_frontpage')->get() as $index => $service)
         <div data-aos="fade-up" class="grid lg:grid-cols-2 lg:gap-10 py-24 lg:py-18 pr-4 lg:pr-0 z-50">
             <div @class([ 'mb-5 lg:mb-0 z-50','lg:order-last' => $index % 2 == 0 ])>
@@ -60,7 +60,7 @@
     @endforeach
 </x-FrontpageSections.yellow-skeleton>
 
-<x-FrontpageSections.blue-full-sceleton preheading="9 Countries" heading="One Team of Experts">
+<x-FrontpageSections.blue-full-sceleton preheading="CEE & SEE" heading="Nine countries, one partner">
         <livewire:intercative-map/>
 </x-FrontpageSections.blue-full-sceleton>
 
@@ -69,8 +69,8 @@
     <div class="container bg-center bg-opacity-75 relative">
         <div class="flex w-full justify-between">
             <div class="text-white z-50 pl-12 sm:pl-24 w-1/2">
-                <h5 class="font-serif text-3xl lowercase">{{ __('The first facility team') }}</h5>
-                <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold">{{ __('Experience & Competence') }}</h2>
+                <h5 class="font-serif text-3xl lowercase">{{ __('Competence') }}</h5>
+                <h2 class="text-xl sm:text-4xl sm:mb-4 lg:text-3xl xl:text-7xl font-bold">{{ __('Experienced Team') }}</h2>
             </div>
         </div>
         <div class="absolute inset-0 z-40">
