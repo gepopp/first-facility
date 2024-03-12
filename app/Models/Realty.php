@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\CountriesEnum;
+use Database\Factories\RealtyFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -34,4 +35,10 @@ class Realty extends Model implements HasMedia
     {
         return $this->hasMany( RealtyMeta::class );
     }
+
+    protected static function newFactory(): RealtyFactory
+    {
+        return RealtyFactory::new();
+    }
+
 }
