@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('2', function () {
     return view('welcome2');
 })->name('home2');
+
+Route::get('realty-seed', function (){
+   \App\Models\Realty::factory()->count(20)->make();
+});
