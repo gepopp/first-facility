@@ -27,10 +27,11 @@
 @else
     <x-FrontpageSections.map2/>
 @endif
+
 <x-FrontpageSections.team/>
 
+<x-FrontpageSections.references/>
 
-<div class="min-h-screen bg-logo-gray"></div>
 
 @if( config('app.debug') )
     <div class="fixed bottom-0 right-0 bg-white/50">

@@ -4,9 +4,7 @@
     heading="Experienced Team"
     textcolor="logo-blue"
     background="white">
-    <div data-aos="fade-left"
-         x-data="employees"
-         class="flex justify-end w-full z-50">
+    <div data-aos="fade-left" x-data="employees" class="flex justify-end w-full z-50">
         <div class="w-full md:w-2/3 pl-20 pr-3 mt-32 z-50">
             <div class="employee-swiper overflow-hidden relative pt-16">
                 <!-- Additional required wrapper -->

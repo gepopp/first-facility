@@ -3,7 +3,8 @@
     "overflow-hidden",
     "bg-gradient-to-b from-logo-dark-blue from-30% to-logo-blue to-90%" => $background == 'gradient',
     "bg-gradient-to-b from-logo-yellow/30 from-30% to-logo-yellow/10 to-90%" => $background == 'yellow',
-    "bg-white" => $background == 'white'
+    "bg-white" => $background == 'white',
+    "bg-gray-300" => $background == 'gray'
 ])
     class="bg-{{ $background }} overflow-hidden">
     <div class="container relative py-64">

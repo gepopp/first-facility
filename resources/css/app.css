@@ -26,3 +26,7 @@
 path{
     @apply transition-all duration-500;
 }
+
+select::-ms-expand {
+    display: none;
+}

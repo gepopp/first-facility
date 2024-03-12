@@ -3016,18 +3016,19 @@ C697.2,466.3,697.2,469.5,697.2,472.7z"/>
             </div>
         </div>
     </div>
-    @script
-    <script>
-        const countries = {!! json_encode($countries) !!};
+</div>
+@script
+<script>
+    const countries = {!! json_encode($countries) !!};
 
-        Alpine.data('map', () => {
-            return {
-                current: 'at',
-                codes: countries,
-                init() {
-                    this.$watch('current', (v) => console.log(v))
-                }
+    Alpine.data('map', () => {
+        return {
+            current: 'at',
+            codes: countries,
+            init() {
+                this.$watch('current', (v) => console.log(v))
             }
-        });
-    </script>
-    @endscript
+        }
+    });
+</script>
+@endscript
