@@ -1,7 +1,7 @@
 @props(['preheading', 'heading'])
 <div class="bg-white overflow-hidden">
     <div class="container relative py-64">
-        <div class="absolute inset-0 z-10 flex items-center pointer-events-none w-[250%] -ml-[125%]"
+        <div class="absolute inset-0 z-10 flex items-center pointer-events-none w-[250%] md:w-full -ml-[125%] md:ml-0"
              x-data="{ show: false }"
              x-intersect="show = true">
             <img src="{{ asset('backgrounds/square-large.svg') }}"
