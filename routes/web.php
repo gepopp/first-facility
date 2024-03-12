@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
-
-Route::get('2', function () {
-    return view('welcome2');
-})->name('home2');
+Route::view('/', 'welcome')->name('home');
 
 Route::get('realty-seed', function (){
    \App\Models\Realty::factory()->count(20)->create();

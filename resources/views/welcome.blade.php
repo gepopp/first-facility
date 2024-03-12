@@ -18,55 +18,17 @@
 
 <livewire:frontpage.hero-slide/>
 
-@php
-    $infoblock = \App\Models\FrontpageIntrotextBlock::first();
-@endphp
-<x-FrontpageSections.blue-sceleton :preheading="$infoblock->pre_heading" :heading="$infoblock->heading">
-    <div class="flex flex-wrap">
-        <div class="w-full sm:w-1/2 p-4 md:w-full lg:w-1/2">
-            <p class="text-white text-sm font-semibold">{{ $infoblock->excerpt }}</p>
-        </div>
-        <div class="w-full sm:w-1/2 p-4 sm:border-l border-white md:w-full lg:w-1/2 md:border-0 lg:border-l">
-            <p class="text-white text-sm font-thin">{{ $infoblock->text }}</p>
-        </div>
-    </div>
-    <div class="mt-8 lg:mt-64 md:ml-0 px-4 aspect-video">
-        <div class="bg-white clip-path-left">
-            @if( !is_null($infoblock->embed_code) )
-                {!! $infoblock->embed_code !!}
-            @else
-                <img src="{{ $infoblock->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
-            @endif
-        </div>
-    </div>
-</x-FrontpageSections.blue-sceleton>
+<x-FrontpageSections.intro :infoblock="\App\Models\FrontpageIntrotextBlock::first()"/>
 
-<x-FrontpageSections.yellow-skeleton preheading="Services" heading="Wide Range Of Services">
-    @foreach(\App\Models\ServiceCategory::orderBy('order_on_frontpage')->get() as $index => $service)
-        <div data-aos="fade-up" class="grid lg:grid-cols-2 lg:gap-10 py-24 lg:py-18 pr-4 lg:pr-0 z-50">
-            <div @class([ 'mb-5 lg:mb-0 z-50','lg:order-last' => $index % 2 == 0 ])>
-                <img src="{{ $service->getFirstMediaUrl() }}" class="aspect-video object-cover clip-path-left drop-shadow-logo">
-            </div>
-            <div class="flex items-center z-50">
-                <div>
-                    <h3 class="text-3xl font-semibold text-logo-blue">{{ $service->name }}</h3>
-                    <p class="text-sm font-thin line-clamp-6">{{ $service->description }}</p>
-                    <div class="mt-10">
-                        <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-yellow text-white py-2 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-</x-FrontpageSections.yellow-skeleton>
+<x-FrontpageSections.services/>
 
-<x-FrontpageSections.blue-full-sceleton preheading="CEE & SEE" heading="Nine countries, one partner">
-    <livewire:intercative-map/>
-</x-FrontpageSections.blue-full-sceleton>
+@if(!request()->has('map'))
+    <x-FrontpageSections.interactive-map/>
+@else
+    <x-FrontpageSections.map2/>
+@endif
+<x-FrontpageSections.team/>
 
-<x-FrontpageSections.white-skeleton preheading="Competence" heading="Experienced Team">
-
-</x-FrontpageSections.white-skeleton>
 
 <div class="min-h-screen bg-logo-gray"></div>
 

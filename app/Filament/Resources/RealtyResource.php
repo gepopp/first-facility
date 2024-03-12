@@ -71,10 +71,10 @@ class RealtyResource extends Resource
     {
         return $table
             ->columns( [
-                Tables\Columns\TextColumn::make( 'country.name' )
+                Tables\Columns\TextColumn::make( 'name' )
                                          ->numeric()
                                          ->sortable(),
-                Tables\Columns\TextColumn::make( 'realty_category_id' )
+                Tables\Columns\TextColumn::make( 'category.name' )
                                          ->numeric()
                                          ->sortable(),
                 Tables\Columns\TextColumn::make( 'created_at' )

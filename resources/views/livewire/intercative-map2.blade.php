@@ -1,13 +1,24 @@
-<div x-data="map" class="relative">
-    <div id="map" class="pl-48 -mt-64 z-10">
-        <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 843 684" style="enable-background:new 0 0 843 684;" xml:space="preserve">
+<div x-data="map" class="relative flex justify-end mt-36">
+    <div id="map" class="w-3/5">
+        <svg class="z-10"
+             xmlns="http://www.w3.org/2000/svg"
+             xmlns:xlink="http://www.w3.org/1999/xlink"
+             x="0px"
+             y="0px"
+             viewBox="0 0 843 684"
+             style="enable-background:new 0 0 843 684;"
+             xml:space="preserve">
 
             <style wire:ignore>
-                .st16{fill:#F8E519;}
-                .st22{fill:#BE2227;}
+                .st16 {
+                    fill: #F8E519;
+                }
 
-                g[id$="FLAG"]{
+                .st22 {
+                    fill: #BE2227;
+                }
+
+                g[id$="FLAG"] {
                     stroke: none;
                 }
 
@@ -33,9 +44,10 @@
                     transition: all;
                     transition-duration: 500ms;
                     transition-timing-function: ease-in-out;
-                    filter: drop-shadow(0 1rem 0.5rem rgba(255,255,255,.5));
+                    filter: drop-shadow(0 1rem 0.5rem rgba(255, 255, 255, .5));
                 }
-                .active g[id$="FLAG"]{
+
+                .active g[id$="FLAG"] {
                     transform: perspective(500px) rotateX(-15deg);
                     transform-origin: 50% 50%;
                 }
@@ -2953,54 +2965,54 @@ C697.2,466.3,697.2,469.5,697.2,472.7z"/>
             </g>
 </svg>
     </div>
-    <div class="absolute top-0 left-24 mt-64 max-w-lg pointer-events-none text-white mx-48">
+    <div class="absolute top-0 left-24 max-w-lg pointer-events-none text-white clip-path-left">
         <div class="bg-white/10 backdrop-blur flex z-50">
-            <div class="flex flex-col divide-y divide-white">
-                <a x-on:mouseover="current = 'at'"
-                   x-on:click="current = 'at'"
-                   class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'bg'"
-                   x-on:click="current = 'bg'"
-                   class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'cz'"
-                   x-on:click="current = 'cz'"
-                   class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'hu'"
-                   x-on:click="current = 'hu'"
-                   class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'mk'"
-                   x-on:click="current = 'mk'"
-                   class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'ro'" x-on:click="current = 'ro'" class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'sr'" x-on:click="current = 'sr'" class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'sl'" x-on:click="current = 'sl'" class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto"/>
-                </a>
-                <a x-on:mouseover="current = 'si'" x-on:click="current = 'si'" class="w-16 aspect-square p-2 flex items-center justify-center z-50 pointer-events-auto">
-                    <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto"/>
-                </a>
-            </div>
-            <div class="w-96 min-h-full border-l border-white p-4">
+            <div class="w-96 min-h-full border-r border-white p-4">
                 <h5 class="text-white text-3xl font-semibold mb-4">Changing Country Information</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate dolorum eum fugit libero
                     neque
                     nostrum quaerat qui quidem sed unde. Dolorem esse modi quam repudiandae veritatis. Consequatur
                     eaque
                     pariatur quam.</p>
+            </div>
+            <div class="flex flex-col divide-y divide-white">
+                <a x-on:mouseover="current = 'at'"
+                   x-on:click="current = 'at'"
+                   class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/austria.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'bg'"
+                   x-on:click="current = 'bg'"
+                   class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/bulgaria.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'cz'"
+                   x-on:click="current = 'cz'"
+                   class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/czech.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'hu'"
+                   x-on:click="current = 'hu'"
+                   class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/hungaria.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'mk'"
+                   x-on:click="current = 'mk'"
+                   class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/north-makedonia.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'ro'" x-on:click="current = 'ro'" class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/romania.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'sr'" x-on:click="current = 'sr'" class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/serbia.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'sl'" x-on:click="current = 'sl'" class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/slovakia.svg') }}" class="w-8 h-auto"/>
+                </a>
+                <a x-on:mouseover="current = 'si'" x-on:click="current = 'si'" class="w-12 aspect-square p-1 flex items-center justify-center z-50 pointer-events-auto">
+                    <img src="{{ asset('flag-icons/slovenia.svg') }}" class="w-8 h-auto"/>
+                </a>
             </div>
         </div>
     </div>
