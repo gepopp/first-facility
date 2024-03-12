@@ -32,6 +32,9 @@
 
 <x-FrontpageSections.references/>
 
+<x-FrontpageSections.blog-link/>
+
+<x-footer/>
 
 @if( config('app.debug') )
     <div class="fixed bottom-0 right-0 bg-white/50">

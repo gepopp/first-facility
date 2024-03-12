@@ -23,11 +23,29 @@ enum CountriesEnum : string implements HasLabel
         return Str::replace( '_', ' ', $this->name );
     }
 
+
+    public function getLong()
+    {
+        return match ( $this ) {
+            CountriesEnum::Austria => 'ATU',
+            CountriesEnum::Bulgaria => 'BGR',
+            CountriesEnum::Check_Republic => 'CZE',
+            CountriesEnum::Hungaria => 'HUN',
+            CountriesEnum::Macedonia => 'MKD',
+            CountriesEnum::Romania => 'ROU',
+            CountriesEnum::Slovenia => 'SLO',
+            CountriesEnum::Slovakia => 'SVK',
+            CountriesEnum::Serbia => 'SRB'
+        };
+    }
+
+
     public static function toAssociativeArray(): array
     {
-        foreach(self::cases() as $case) {
-            $array[$case->value] = $case->name;
+        foreach ( self::cases() as $case ) {
+            $array[ $case->value ] = $case->name;
         }
+
         return $array;
     }
 }
