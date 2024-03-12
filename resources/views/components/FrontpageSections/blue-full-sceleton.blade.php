@@ -14,17 +14,17 @@
             </div>
         </div>
         <div class="scale-0"></div>
-{{--        <div class="absolute inset-0 z-40 flex items-center"--}}
-{{--             x-data="{ show: false }"--}}
-{{--             x-intersect="show = true">--}}
-{{--            <img src="{{ asset('backgrounds/square-large.svg') }}"--}}
-{{--                 x-cloak--}}
-{{--                 x-show="show"--}}
-{{--                 x-transition:enter="transition ease-out duration-700 delay-300"--}}
-{{--                 x-transition:enter-start="opacity-0 scale-0"--}}
-{{--                 x-transition:enter-end="opacity-50 scale-100"--}}
-{{--                 class="object-cover opacity-10">--}}
-{{--        </div>--}}
+        <div class="absolute inset-0 z-40 flex items-center"
+             x-data="{ show: false }"
+             x-intersect="show = true">
+            <img src="{{ asset('backgrounds/square-large.svg') }}"
+                 x-cloak
+                 x-show="show"
+                 x-transition:enter="transition ease-out duration-700 delay-300"
+                 x-transition:enter-start="opacity-0 scale-0"
+                 x-transition:enter-end="opacity-50 scale-100"
+                 class="object-cover opacity-10">
+        </div>
         <x-scroll-inidcator number="02"/>
     </div>
 </div>

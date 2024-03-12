@@ -16,6 +16,6 @@ class IntercativeMap extends Component
         $countries['at'] = 'Austria';
         unset( $countries['de'] );
 
-        return view( 'livewire.intercative-map', compact( 'countries' ) );
+        return view( 'livewire.intercative-map2', compact( 'countries' ) );
     }
 }
