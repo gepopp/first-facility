@@ -22,5 +22,5 @@ Route::get('2', function () {
 })->name('home2');
 
 Route::get('realty-seed', function (){
-   \App\Models\Realty::factory()->count(20)->make();
+   \App\Models\Realty::factory()->count(20)->create();
 });

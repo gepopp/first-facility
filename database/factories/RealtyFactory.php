@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\CountriesEnum;
 use App\Models\Realty;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -34,7 +35,7 @@ class RealtyFactory extends Factory
     {
         return [
             'countries'          => [ "de", "bg", "hu", "mk", "ro", "sk", "sl", "sr" ],
-            'country'            => 'at',
+            'country'            => CountriesEnum::Austria->value,
             'realty_category_id' => 1,
             'name'               => fake()->name(),
             'description'        => fake()->paragraph( 5 ),
