@@ -36,9 +36,4 @@ class Realty extends Model implements HasMedia
         return $this->hasMany( RealtyMeta::class );
     }
 
-    protected static function newFactory(): RealtyFactory
-    {
-        return RealtyFactory::new();
-    }
-
 }

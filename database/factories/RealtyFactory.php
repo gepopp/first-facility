@@ -36,8 +36,8 @@ class RealtyFactory extends Factory
             'countries'          => [ "de", "bg", "hu", "mk", "ro", "sk", "sl", "sr" ],
             'country'            => 'at',
             'realty_category_id' => 1,
-            'name'               => $this->faker->name,
-            'description'        => $this->faker->paragraph( 5 ),
+            'name'               => fake()->name(),
+            'description'        => fake()->paragraph( 5 ),
         ];
     }
 }
