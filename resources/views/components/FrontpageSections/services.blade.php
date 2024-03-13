@@ -16,7 +16,8 @@
                             <h3 class="text-3xl font-semibold text-logo-blue">{{ $service->name }}</h3>
                             <p class="text-sm font-thin line-clamp-6">{{ $service->description }}</p>
                             <div class="mt-10">
-                                <a href="#" class="drop-shadow-logo border-radius-md clip-path-left bg-logo-yellow text-white py-2 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
+                                <a href="#"
+                                   class="drop-shadow-logo border-radius-md clip-path-left bg-logo-yellow text-white py-4 px-8 font-semibold cursor-pointer uppercase">{{ __( 'Details' ) }}</a>
                             </div>
                         </div>
                     </div>

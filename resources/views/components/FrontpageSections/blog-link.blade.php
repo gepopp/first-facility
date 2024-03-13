@@ -11,7 +11,7 @@
                 </p>
                 <div class="mt-10">
                     <a href="#"
-                       class="drop-shadow-logo border-radius-md clip-path-left bg-logo-yellow text-white py-2 px-8 font-semibold cursor-pointer uppercase">
+                       class="drop-shadow-logo border-radius-md clip-path-left bg-logo-yellow text-white py-4 px-8 font-semibold cursor-pointer uppercase">
                         {{ __( 'To our blog' ) }}
                     </a>
                 </div>

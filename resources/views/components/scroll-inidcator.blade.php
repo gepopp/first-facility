@@ -1,9 +1,9 @@
 @props(['number', 'color' => 'white'])
 <div x-data="{ onScreen: false }"
-     x-intersect:enter.threshold.50="onScreen = true"
-     x-intersect:leave="onScreen = false"
     {{ $attributes->merge(['class' => "absolute left-5 sm:left-10 top-64 h-full flex flex-col justify-center z-50"]) }}>
-    <p class="text-{{ $color }} text-lg mt-5">{{ $number }}</p>
+    <p  x-intersect:enter="onScreen = true"
+        x-intersect:leave="onScreen = false"
+        class="text-{{ $color }} text-lg mt-5">{{ $number }}</p>
     <div class="h-full overflow-hidden">
         <div class="w-0.5 mx-auto bg-{{$color}}/75 h-full relative">
             <div x-cloak
