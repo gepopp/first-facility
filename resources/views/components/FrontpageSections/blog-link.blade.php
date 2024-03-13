@@ -3,7 +3,7 @@
         <img src="{{asset('images/consultant.png')}}" class="object-cover"/>
         <div class="absolute bottom-0 right-0 w-2/3 aspect-video bg-logo-blue/40 backdrop-blur-lg clip-path-left p-20 flex justify-center items-center">
             <div class="max-w-[66%]">
-                <h1 class="text-white text-5xl font-bold uppercase">Read out latest news</h1>
+                <h1 class="text-white text-5xl font-bold uppercase">Read our latest news</h1>
                 <p class="text-white">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum, deleniti
                     dolorem, et ex fugiat id libero nesciunt nisi odit optio porro qui quis quisquam reprehenderit sed,
