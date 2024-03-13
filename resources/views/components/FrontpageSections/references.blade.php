@@ -2,7 +2,7 @@
     number="05"
     preheading="projects"
     heading="More than 100 satisfied clients"
-    background="gray"
+    background="yellow"
     textcolor="logo-blue">
     <div class="flex justify-end mt-48">
         <div class="w-3/5">

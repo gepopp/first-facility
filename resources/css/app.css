@@ -30,3 +30,7 @@ path{
 select::-ms-expand {
     display: none;
 }
+
+.button{
+    @apply rounded-md clip-path-left bg-logo-yellow text-white py-4 px-8 font-semibold cursor-pointer uppercase;
+}

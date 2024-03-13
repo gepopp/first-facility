@@ -30,6 +30,8 @@
 
 <x-FrontpageSections.team/>
 
+<x-FrontpageSections.contact/>
+
 <x-FrontpageSections.references/>
 
 <x-FrontpageSections.blog-link/>
